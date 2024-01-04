@@ -18,12 +18,26 @@
     'teste-de-usabilidade-entregando-resultados'
   ];
 
+  // for (var i = 0; i < myCourses.length; i++) {
+  //   // Atualização da URL para apontar para o servidor proxy
+  //   $.get("https://cursos.alura.com.br/api/curso-" + myCourses[i], function(curso) {
+  //     courseFactory(curso);
+  //   });
+  // }
+
   for (var i = 0; i < myCourses.length; i++) {
-    // Atualização da URL para apontar para o servidor proxy
-    $.get("https://cursos.alura.com.br/api/curso-" + myCourses[i], function(curso) {
-      courseFactory(curso);
+    fetch("https://cursos.alura.com.br/api/curso-" + myCourses[i], {
+        mode: 'no-cors' // Adicionando no-cors
+    })
+    .then(function(response) {
+        // Note que não podemos acessar os dados da resposta diretamente
+        console.log('Request successful', response);
+    })
+    .catch(function(error) {
+        console.log('Request failed', error);
     });
-  }
+}
+
 
   function courseFactory(curso) {
     var course = $('<div>').addClass('sectionCourses-course');
