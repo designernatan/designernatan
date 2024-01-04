@@ -1,1 +1,231 @@
-*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Helvetica,sans-serif}ul{list-style:none}a{text-decoration:none;color:#1679ff}a:hover{text-decoration:underline}body{background:linear-gradient(120deg,rgba(102,126,234,.9),rgba(118,75,162,.9)),url(../img/bg-100dcf66f1.jpg);background-attachment:fixed,fixed;background-size:cover;animation:westanimationworld 3s infinite}@keyframes eitawestanimationworld{0%{background:linear-gradient(120deg,rgba(102,126,234,.9),rgba(118,75,162,.9)),url(../img/bg-100dcf66f1.jpg);background-attachment:fixed,fixed;background-size:cover}50%{background:linear-gradient(120deg,hsla(33,95%,78%,.9),rgba(233,196,242,.9)),url(../img/bg-100dcf66f1.jpg);background-attachment:fixed,fixed;background-size:cover}to{background:linear-gradient(120deg,rgba(102,126,234,.9),rgba(118,75,162,.9)),url(../img/bg-100dcf66f1.jpg);background-attachment:fixed,fixed;background-size:cover}}.container{padding:1em;text-align:center}.card{background-color:#fff;box-shadow:0 0 2px #000;width:300px;margin:1em auto;padding:2em 1em;border-radius:7px}.header{border-bottom:1px solid #555;background-color:#3a1f55}.menu{max-width:711px;margin:0 auto}.menu-item{display:inline-block;padding:.3em 3%}.menu-item a{color:#fff}.menu-item-link--active{border-bottom:2px solid #fff}.sectionMinibio{margin:2em 0}.sectionMinibio-avatar{border-radius:50%;margin:0 0 1.5em}.sectionHighlight-title{font-size:1em}.sectionHighlight-title:first-line{font-size:2em}.sectionSocial-network{width:64px;height:64px;display:inline-block;text-indent:-9999px;overflow:hidden;margin:0 .5em}.sectionSocial-network[href="https://www.linkedin.com/in/designernatan"]{background-image:url(../img/linkedin-icon-d151dfb1b0.png)}.sectionSocial-network[href="https://twitter.com/designernatan"]{background-image:url(../img/twitter-icon-3b565e39c0.png)}.sectionCourses{display:flex;flex-wrap:wrap;justify-content:center}.sectionCourses-course{text-align:center;background-color:hsla(0,0%,100%,.8);padding:2em;margin:1em;border-radius:8px;box-shadow:0 0 5px rgba(0,0,0,.2);max-width:320px;display:flex;flex-flow:column;align-items:center;flex-wrap:wrap;justify-content:space-between}.sectionCourses-course-icon{width:5em}.sectionCourses-course-name{margin:.5em}.sectionCourses-course-btn{border:2px solid #333;padding:.6em;margin-top:1em;display:inline-block;border-radius:8px;color:#333;transition:.2s ease-in}.sectionCourses-course-btn:focus,.sectionCourses-course-btn:hover{background-color:#333;color:#fff;text-decoration:none}@keyframes floatz{0%{top:-.5em;transform:scale(1)}to{top:1em;transform:scale(1.02)}}.books{position:absolute;top:0;transform:translate(-50%,25%);width:100%;opacity:1;display:inline-block;transition:.3s ease-in}.books--some{opacity:0;display:none}.book{position:relative;animation:2s floatz alternate infinite ease-in-out;width:12.5em;font-size:16px;display:inline-block;margin:2em 12em}.book:focus,.book:hover{animation-play-state:paused}.book:before{width:100%;height:30%;left:50%;bottom:-4em;transform:translate(-50%,-.5em) scaleY(.8);box-shadow:0 3px 5px rgba(0,0,0,.1)}.book:after,.book:before{content:"";display:inline-block;background-color:#d6eeff;position:absolute;z-index:0;border-radius:60px}.book:after{width:5em;height:5em;left:35%;bottom:-.5em;transform:translateX(-50%);box-shadow:3.75em 1.2em 0 #d6eeff}.book-cover{display:inline-block;max-width:100%;position:relative;z-index:-1;top:1em;box-shadow:5px solid}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Segoe UI,Helvetica,sans-serif;
+    text-indent: 0;
+}
+
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #1679ff;
+}
+a:hover {
+    text-decoration: underline;
+}
+body {
+    background: linear-gradient(120deg,rgba(102,126,234,.9),rgba(118,75,162,.9)),url(../img/bg-100dcf66f1.jpg);
+    background-attachment: fixed,fixed;
+    background-size: cover;
+    animation: westanimationworld 3s infinite;
+}
+@keyframes eitawestanimationworld {
+    0% {
+        background: linear-gradient(120deg,rgba(102,126,234,.9),rgba(118,75,162,.9)),url(../img/bg-100dcf66f1.jpg);
+        background-attachment: fixed,fixed;
+        background-size: cover;
+    }
+    50% {
+        background: linear-gradient(120deg,hsla(33,95%,78%,.9),rgba(233,196,242,.9)),url(../img/bg-100dcf66f1.jpg);
+        background-attachment: fixed,fixed;
+        background-size: cover;
+    }
+    to {
+        background: linear-gradient(120deg,rgba(102,126,234,.9),rgba(118,75,162,.9)),url(../img/bg-100dcf66f1.jpg);
+        background-attachment: fixed,fixed;
+        background-size: cover;
+    }
+}
+.container {
+    padding: 1em;
+    text-align: center;
+}
+
+.about {
+    
+}
+
+
+.card {
+    background-color: #fff;
+    box-shadow: 0 0 2px #000;
+    /* min-width: 300px; */
+    width: 300px;
+    margin: 1em auto;
+    padding: 2em 2em;
+    border-radius: 7px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.about > .card:nth-of-type(1) {
+    /* background: red; */
+}
+
+.about > .card:nth-of-type(2) {
+    text-align: left;
+    width: 475px;
+
+}
+
+.card p {
+    margin-bottom: 1em;
+}
+
+
+.header {
+    border-bottom: 1px solid #555;
+    background-color: rgba(0,0,0,.2);
+}
+.menu {
+    max-width: 711px;
+    margin: 0 auto;
+}
+.menu-item {
+    display: inline-block;
+    padding: 0.3em 3%;
+}
+.menu-item a {
+    color: #fff;
+}
+.menu-item-link--active {
+    border-bottom: 2px solid #fff;
+}
+.sectionMinibio {
+    margin: 2em 0;
+}
+.sectionMinibio-avatar {
+    border-radius: 50%;
+    margin: 0 0 1.5em;
+}
+.sectionHighlight-title {
+    font-size: 1em;
+}
+.sectionHighlight-title:first-line {
+    font-size: 2em;
+}
+.sectionSocial-network {
+    width: 64px;
+    height: 64px;
+    display: inline-block;
+    text-indent: -9999px;
+    overflow: hidden;
+    margin: 0 0.5em;
+}
+.sectionSocial-network[href="https://www.linkedin.com/in/designernatan"] {
+    background-image: url("../img/linkedin-icon-d151dfb1b0.png");
+}
+.sectionSocial-network[href="https://twitter.com/designernatan"] {
+    background-image: url("../img/twitter-icon-3b565e39c0.png");
+}
+.sectionCourses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.sectionCourses-course {
+    text-align: center;
+    background-color: hsla(0,0%,100%,.8);
+    padding: 2em;
+    margin: 1em;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    max-width: 320px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.sectionCourses-course-icon {
+    width: 5em;
+}
+.sectionCourses-course-name {
+    margin: 0.5em;
+}
+.sectionCourses-course-btn {
+    border: 2px solid #333;
+    padding: 0.6em;
+    margin-top: 1em;
+    display: inline-block;
+    border-radius: 8px;
+    color: #333;
+    transition: 0.2s ease-in;
+}
+.sectionCourses-course-btn:focus,
+.sectionCourses-course-btn:hover {
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+}
+@keyframes floatz {
+    0% {
+        top: -.5em;
+        transform: scale(1);
+    }
+    to {
+        top: 1em;
+        transform: scale(1.02);
+    }
+}
+.books {
+    position: absolute;
+    top: 0;
+    transform: translate(-50%,25%);
+    width: 100%;
+    opacity: 1;
+    display: inline-block;
+    transition: 0.3s ease-in;
+}
+.books--some {
+    opacity: 0;
+    display: none;
+}
+.book {
+    position: relative;
+    animation: 2s floatz alternate infinite ease-in-out;
+    width: 12.5em;
+    font-size: 16px;
+    display: inline-block;
+    margin: 2em 12em;
+}
+.book:focus,
+.book:hover {
+    animation-play-state: paused;
+}
+.book:before {
+    width: 100%;
+    height: 30%;
+    left: 50%;
+    bottom: -4em;
+    transform: translate(-50%,-.5em) scaleY(.8);
+    box-shadow: 0 3px 5px rgba(0,0,0,.1);
+}
+.book:after,
+.book:before {
+    content: "";
+    display: inline-block;
+    background-color: #d6eeff;
+    position: absolute;
+    z-index: 0;
+    border-radius: 60px;
+}
+.book:after {
+    width: 5em;
+    height: 5em;
+    left: 35%;
+    bottom: -.5em;
+    transform: translateX(-50%);
+    box-shadow: 3.75em 1.2em 0 #d6eeff;
+}
+.book-cover {
+    display: inline-block;
+    max-width: 100%;
+    position: relative;
+    z-index: -1;
+    top: 1em;
+    box-shadow: 5px solid;
+}
