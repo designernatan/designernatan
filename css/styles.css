@@ -17,7 +17,7 @@ a:hover {
     text-decoration: underline;
 }
 body {
-    background: linear-gradient(120deg,rgba(102,126,234,.9),rgba(118,75,162,.9)),url(../img/bg-100dcf66f1.jpg);
+    background: linear-gradient(120deg,rgb(18 18 18 / 90%),rgb(44 44 44 / 90%)),url(../img/bg-100dcf66f1.jpg);
     background-attachment: fixed,fixed;
     background-size: cover;
     animation: westanimationworld 3s infinite;
@@ -51,6 +51,7 @@ body {
 
 .card {
     background-color: #fff;
+    color: rgb(25, 25, 25);
     box-shadow: 0 0 2px #000;
     /* min-width: 300px; */
     width: 300px;

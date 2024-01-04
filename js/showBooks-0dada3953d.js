@@ -1,1 +1,0 @@
-!function(){var e=document.querySelector(".menu-item-link--books");e.addEventListener("contextmenu",function(e){e.preventDefault(),document.querySelector(".books").classList.toggle("books--some")})}();
