@@ -19,12 +19,10 @@
   ];
 
   for (var i = 0; i < myCourses.length; i++) {
-    $.get(
-      "https://cursos.alura.com.br/api/curso-" + myCourses[i],
-      function(curso) {
-        courseFactory(curso);
-      }
-    );
+    // Atualização da URL para apontar para o servidor proxy
+    $.get("https://cursos.alura.com.br/api/curso-" + myCourses[i], function(curso) {
+      courseFactory(curso);
+    });
   }
 
   function courseFactory(curso) {
