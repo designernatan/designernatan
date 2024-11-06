@@ -6,12 +6,18 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Segoe UI,Helvetica,sans-serif;
+    font-family: "Segoe UI", Helvetica,sans-serif;
     text-indent: 0;
+}
+
+h1 {
+    font-weight: 200;
 }
 
 h2 {
     margin-bottom: .5em;
+    font-weight: 500;
+
 }
 
 ul {
@@ -65,6 +71,34 @@ body {
     vertical-align: top;
 }
 
+.card-inverted {
+    background-color: rgba(25, 25, 25, .5);
+    backdrop-filter: blur(20px);
+    color: #FFF;
+    /* min-width: 300px; */
+    width: 100%;
+    margin: 1em auto;
+    padding: 2em 6em;
+    border-radius: 2px;
+    font-size: 2em;
+    border: 1px solid rgba(255,255,255,.5);
+    transition: .3s;
+}
+.card-inverted strong {
+    color: rgb(106, 85, 223);
+    font-weight: 500;
+}
+
+.card-inverted:hover,
+.card-inverted:focus {
+    border: 1px solid rgba(255,255,255,1)
+}
+
+.card-inverted p {
+
+}
+
+
 
 
 .about > .card:nth-of-type(1) {
@@ -109,6 +143,7 @@ body {
 }
 .sectionHighlight-title {
     font-size: 1em;
+    font-weight: 500;
 }
 .sectionHighlight-title:first-line {
     font-size: 2em;
@@ -174,6 +209,8 @@ body {
 .sectionCourses-course:hover,
 .sectionCourses-course:active {
     background-color: hsla(0,0%,100%,1);
+    transform: translateY(-10px);
+
 }
 
 .sectionCourses-course-icon {
