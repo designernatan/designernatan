@@ -10,6 +10,9 @@
     text-indent: 0;
 }
 
+h2 {
+    margin-bottom: .5em;
+}
 
 ul {
     list-style: none;
@@ -48,11 +51,6 @@ body {
     padding: 1em;
     text-align: center;
 }
-
-.about {
-    
-}
-
 
 .card {
     background-color: #fff;
@@ -199,71 +197,23 @@ body {
     color: #fff;
     text-decoration: none;
 }
-@keyframes floatz {
-    0% {
-        top: -.5em;
-        transform: scale(1);
-    }
-    to {
-        top: 1em;
-        transform: scale(1.02);
-    }
-}
-.books {
-    position: absolute;
-    top: 0;
-    transform: translate(-50%,25%);
-    width: 100%;
-    opacity: 1;
-    display: inline-block;
-    transition: 0.3s ease-in;
-}
-.books--some {
-    opacity: 0;
-    display: none;
-}
+
+
 .book {
-    position: relative;
-    animation: 2s floatz alternate infinite ease-in-out;
     width: 12.5em;
     font-size: 16px;
     display: inline-block;
-    margin: 2em 12em;
+    transition: .3s;
+
 }
-.book:focus,
-.book:hover {
-    animation-play-state: paused;
+.book:hover,
+.book:focus {
+    transform: scale(1.02)
 }
-.book:before {
-    width: 100%;
-    height: 30%;
-    left: 50%;
-    bottom: -4em;
-    transform: translate(-50%,-.5em) scaleY(.8);
-    box-shadow: 0 3px 5px rgba(0,0,0,.1);
-}
-.book:after,
-.book:before {
-    content: "";
-    display: inline-block;
-    background-color: #d6eeff;
-    position: absolute;
-    z-index: 0;
-    border-radius: 60px;
-}
-.book:after {
-    width: 5em;
-    height: 5em;
-    left: 35%;
-    bottom: -.5em;
-    transform: translateX(-50%);
-    box-shadow: 3.75em 1.2em 0 #d6eeff;
-}
+
 .book-cover {
     display: inline-block;
     max-width: 100%;
-    position: relative;
-    z-index: -1;
-    top: 1em;
     box-shadow: 5px solid;
 }
+
