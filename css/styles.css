@@ -1,3 +1,7 @@
+:root {
+    --link-color: #1679ff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,12 +10,13 @@
     text-indent: 0;
 }
 
+
 ul {
     list-style: none;
 }
 a {
     text-decoration: none;
-    color: #1679ff;
+    color: var(--link-color);
 }
 a:hover {
     text-decoration: underline;
@@ -116,6 +121,29 @@ body {
     overflow: hidden;
     margin: 0 0.5em;
 }
+.sectionSocial-button {
+    border-radius: 60px;
+    padding: .75em 2em;
+
+    display: inline-block;
+    font-size: 1.2em;
+    transition: background-color .3s;
+
+    border: 2px solid var(--link-color);
+    color: white;
+    background-color: var(--link-color);
+}
+.sectionSocial-button:hover,
+.sectionSocial-button:focus {
+    text-decoration: none;
+    border: 2px solid var(--link-color);
+    color: var(--link-color);
+    background-color: #fff;
+}
+.sectionSocial-button:active {
+
+}
+
 .sectionSocial-network[href="https://www.linkedin.com/in/designernatan"] {
     background-image: url("../img/linkedin-icon-d151dfb1b0.png");
 }
