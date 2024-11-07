@@ -224,6 +224,11 @@ body {
 .sectionHighlight-title:first-line {
     font-size: 2em;
 }
+.sectionSocial {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
 .sectionSocial-network {
     width: 64px;
     height: 64px;
@@ -235,16 +240,18 @@ body {
 .sectionSocial-button {
     text-decoration: none;
     border-radius: 60px;
-    padding: .75em 2em;
+    padding: .5em 1.25em;
 
     display: inline-block;
-    font-size: 1.2em;
+    font-size: 1em;
     transition: background-color .3s;
 
     border: 2px solid var(--link-color);
     color: white;
     background-color: var(--link-color);
 }
+
+
 .sectionSocial-button:hover,
 .sectionSocial-button:focus {
     text-decoration: none;
@@ -252,8 +259,18 @@ body {
     color: var(--link-color);
     background-color: #fff;
 }
-.sectionSocial-button:active {
 
+.button-ghost {
+    border: 2px solid var(--link-color);
+    color: var(--link-color);
+    background-color: #fff;
+}
+
+.button-ghost:hover,
+.button-ghost:focus {
+    border: 2px solid var(--link-color);
+    color: white;
+    background-color: var(--link-color);
 }
 
 .sectionSocial-network[href="https://www.linkedin.com/in/designernatan"] {
@@ -326,6 +343,7 @@ body {
     font-size: 16px;
     display: inline-block;
     transition: .3s;
+    text-decoration: none;
 
 }
 .book:hover,
