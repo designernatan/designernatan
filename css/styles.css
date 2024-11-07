@@ -24,7 +24,6 @@ ul {
     list-style: none;
 }
 a {
-    text-decoration: none;
     color: var(--link-color);
 }
 a:hover {
@@ -76,13 +75,21 @@ body {
     backdrop-filter: blur(20px);
     color: #FFF;
     width: 100%;
+    max-width: 800px; /* Limita a largura do card em telas grandes */
     margin: 1em auto;
-    padding: 2em 6em;
+    padding: 2em 4em; /* Ajuste no padding para manter proporcionalidade */
     border-radius: 2px;
-    font-size: 2em;
+    font-size: 1.5em; /* Diminui o tamanho do texto */
     border: 1px solid rgba(255, 255, 255, .5);
     transition: .3s;
     color: #e0e0e0;
+}
+
+@media (min-width: 1024px) {
+    .main > .card:first-of-type {
+        padding: 2em 3em; /* Reduz o padding para telas muito grandes */
+        font-size: 1.2em; /* Diminui o tamanho do texto para telas grandes */
+    }
 }
 
 @media (max-width: 768px) {
@@ -95,11 +102,12 @@ body {
 .main > .card:first-of-type h1 {
     line-height: .9;
     margin-bottom: .5em;
+    font-size: 1.5em; /* Ajusta o tamanho do h1 */
 }
 
 .main > .card:first-of-type p {
     color: #bfbfbf;
-    font-size: .75em;
+    font-size: .9em; /* Diminui o tamanho do texto do parágrafo */
     max-width: 60ch;
     margin: 0 auto;
 }
@@ -225,6 +233,7 @@ body {
     margin: 0 0.5em;
 }
 .sectionSocial-button {
+    text-decoration: none;
     border-radius: 60px;
     padding: .75em 2em;
 
