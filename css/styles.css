@@ -17,7 +17,6 @@ h1 {
 h2 {
     margin-bottom: .5em;
     font-weight: 500;
-    color: #1679ff;
 
 }
 
@@ -70,6 +69,20 @@ body {
     border-radius: 2px;
     display: inline-block;
     vertical-align: top;
+}
+
+.main > .card:first-of-type {
+    background-color: rgba(25, 25, 25, .5);
+    backdrop-filter: blur(20px);
+    color: #FFF;
+    width: 100%;
+    margin: 1em auto;
+    padding: 2em 6em;
+    border-radius: 2px;
+    font-size: 1em;
+    border: 1px solid rgba(255, 255, 255, .5);
+    transition: .3s;
+    color: #e0e0e0;
 }
 
 .card-inverted {
@@ -238,8 +251,16 @@ body {
 .sectionCourses-course:active {
     background-color: hsla(0,0%,100%,1);
     transform: translateY(-10px);
-
 }
+
+@media (max-width: 768px) {
+    .sectionCourses-course {
+        width: 100%;
+        max-width: none; /* Remove qualquer limite de largura */
+        margin: 1em 0; /* Ajusta as margens para evitar espaços laterais */
+    }
+}
+
 
 .sectionCourses-course-icon {
     width: 5em;
