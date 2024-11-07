@@ -409,3 +409,14 @@ body {
         padding: 0.4em 1em; /* Ajusta o padding para manter proporcionalidade */
     }
 }
+@media (max-width: 768px) {
+    .sectionSocial {
+        flex-direction: column; /* Alinha os botões verticalmente no mobile */
+        gap: 0.5em; /* Ajusta o espaçamento entre os botões */
+    }
+
+    .sectionSocial-button {
+        width: 100%; /* Faz os botões ocuparem toda a largura disponível */
+        text-align: center; /* Centraliza o texto dentro do botão */
+    }
+}
