@@ -79,10 +79,37 @@ body {
     margin: 1em auto;
     padding: 2em 6em;
     border-radius: 2px;
-    font-size: 1em;
+    font-size: 2em;
     border: 1px solid rgba(255, 255, 255, .5);
     transition: .3s;
     color: #e0e0e0;
+}
+
+@media (max-width: 768px) {
+    .main > .card:first-of-type {
+        padding: 2em 1em; /* Diminui o padding lateral para telas menores */
+        font-size: 1.2em;
+    }
+}
+
+.main > .card:first-of-type h1 {
+    line-height: .9;
+    margin-bottom: .5em;
+}
+
+.main > .card:first-of-type p {
+    color: #bfbfbf;
+    font-size: .75em;
+    max-width: 60ch;
+    margin: 0 auto;
+}
+
+.main > .card:first-of-type strong {
+    font-weight: 500;
+    transition: .3s;
+    background: linear-gradient(45deg, #6A55DF, #00d0ff);
+    color: transparent;
+    -webkit-background-clip: text;
 }
 
 .card-inverted {
