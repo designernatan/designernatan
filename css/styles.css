@@ -379,4 +379,31 @@ body {
     max-width: 100%;
     box-shadow: 5px solid;
 }
+@media (max-width: 768px) {
+    .books {
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .book {
+        width: 100%;
+        max-width: none;
+        margin: 1em 0;
+    }
+}
+@media (max-width: 768px) {
+    .sectionSocial-button,
+    .button-ghost,
+    .sectionCourses-course-btn {
+        font-size: 0.8em; /* Diminui o tamanho do texto dos botões no mobile */
+        padding: 0.4em 1em; /* Ajusta o padding para manter proporcionalidade */
+    }
+}
+@media (max-width: 1024px) {
+    .sectionSocial-button,
+    .button-ghost,
+    .sectionCourses-course-btn {
+        font-size: 0.8em; /* Diminui o tamanho do texto dos botões no mobile */
+        padding: 0.4em 1em; /* Ajusta o padding para manter proporcionalidade */
+    }
+}
