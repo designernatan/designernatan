@@ -57,6 +57,11 @@ body {
     text-align: center;
 }
 
+.container-courses {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 .card {
     background-color: #fff;
     color: rgb(25, 25, 25);
@@ -121,8 +126,7 @@ body {
 }
 
 .card-inverted {
-    background-color: rgba(25, 25, 25, .5);
-    backdrop-filter: blur(20px);
+
     color: #FFF;
     /* min-width: 300px; */
     width: 100%;
@@ -130,9 +134,7 @@ body {
     padding: 2em 6em;
     border-radius: 2px;
     font-size: 2em;
-    border: 1px solid rgba(255,255,255,.5);
     transition: .3s;
-    color: #e0e0e0;
 }
 @media (max-width: 768px) {
     .card-inverted {
@@ -145,6 +147,7 @@ body {
 .card-inverted h1 {
     line-height: .9;
     margin-bottom: .5em;
+    font-weight: normal;
 }
 .card-inverted h2 {
     text-align: center;
@@ -164,11 +167,6 @@ body {
 
 }
 
-.card-inverted:hover,
-.card-inverted:focus {
-    border: 1px solid rgba(255,255,255,1);
-    transform: translateY(-12px);
-}
 
 
 
@@ -280,31 +278,43 @@ body {
     background-image: url("../img/twitter-icon-3b565e39c0.png");
 }
 .sectionCourses {
-    display: flex;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center; */
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5em; /* Espaçamento entre os cards */
+    justify-items: center; /* Centraliza os cards dentro da grid */
 }
 .sectionCourses-course {
-    text-align: center;
-    background-color: hsla(0,0%,100%,.9);
-    padding: 2em;
+    background-color: rgba(25, 25, 25, .5); /* Fundo igual ao .card-inverted */
+    backdrop-filter: blur(20px); /* Efeito de desfoque */
+    color: #FFF;
+    padding: 2em 6em; /* Ajustado para manter consistência com o .card-inverted */
     margin: 1em;
     border-radius: 2px;
-    box-shadow: 0 0 5px rgba(0,0,0,.2);
-    max-width: 320px;
+    border: 1px solid rgba(255, 255, 255, .5); /* Borda igual ao .card-inverted */
+    box-shadow: none; /* Remove sombra para manter consistência */
+    transition: .3s; /* Transição igual ao .card-inverted */
     display: flex;
     flex-flow: column;
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-between;
-    transition: .2s ease-in;
+
+    width: 100%;
+    max-width: 400px; /* Limita a largura máxima dos cards para manter um bom layout */
 }
 
+/* Hover igual ao .card-inverted */
 .sectionCourses-course:hover,
 .sectionCourses-course:active {
-    background-color: hsla(0,0%,100%,1);
-    transform: translateY(-10px);
+    background-color: rgba(25, 25, 25, .5); /* Mantém o fundo no hover */
+    border: 1px solid rgba(255, 255, 255, 1); /* Borda mais intensa no hover */
+    transform: translateY(-12px); /* Efeito de elevação como o .card-inverted */
 }
+
 
 @media (max-width: 768px) {
     .sectionCourses-course {
