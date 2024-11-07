@@ -209,6 +209,8 @@ body {
 .sectionHighlight-title {
     font-size: 1em;
     font-weight: 200;
+    white-space: nowrap; /* Evita que o nome quebre em várias linhas */
+
 }
 .sectionHighlight-title:first-line {
     font-size: 2em;
