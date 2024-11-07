@@ -83,19 +83,37 @@ body {
     font-size: 2em;
     border: 1px solid rgba(255,255,255,.5);
     transition: .3s;
+    color: #e0e0e0;
+}
+@media (max-width: 768px) {
+    .card-inverted {
+        padding: 2em 1em; /* Diminui o padding lateral para telas menores */
+        font-size: 1.2em;
+    }
+}
+
+
+.card-inverted h2 {
+    text-align: center;
+    line-height: -.5em;
+}
+.card-inverted p {
+    color: #bfbfbf;
+    font-size: .75em;
+    max-width: 60ch;
+    margin: 0 auto;
 }
 .card-inverted strong {
-    color: rgb(106, 85, 223);
     font-weight: 500;
+    transition: .3s;
+    background: linear-gradient(45deg, #6A55DF, #00d0ff);
+    color: transparent;
+    -webkit-background-clip: text;
 }
 
 .card-inverted:hover,
 .card-inverted:focus {
-    border: 1px solid rgba(255,255,255,1)
-}
-
-.card-inverted p {
-
+    border: 1px solid rgba(255,255,255,1);
 }
 
 
