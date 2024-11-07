@@ -78,16 +78,15 @@ body {
 .main > .card:first-of-type {
     background-color: rgba(25, 25, 25, .5);
     backdrop-filter: blur(20px);
-    color: #FFF;
     width: 100%;
     max-width: 800px; /* Limita a largura do card em telas grandes */
     margin: 1em auto;
     padding: 2em 4em; /* Ajuste no padding para manter proporcionalidade */
     border-radius: 2px;
     font-size: 1.5em; /* Diminui o tamanho do texto */
-    border: 1px solid rgba(255, 255, 255, .5);
     transition: .3s;
     color: #e0e0e0;
+
 }
 
 @media (min-width: 1024px) {
@@ -128,8 +127,7 @@ body {
 .card-inverted {
 
     color: #FFF;
-    /* min-width: 300px; */
-    width: 100%;
+    /* min-width: 300px; */    width: 100%;
     margin: 1em auto;
     padding: 2em 6em;
     border-radius: 2px;
@@ -164,22 +162,10 @@ body {
     background: linear-gradient(45deg, #6A55DF, #00d0ff);
     color: transparent;
     -webkit-background-clip: text;
-
 }
 
 
 
-
-
-.about > .card:nth-of-type(1) {
-    /* background: red; */
-}
-
-.about > .card:nth-of-type(2) {
-    text-align: left;
-    width: 475px;
-
-}
 
 .card p {
     margin-bottom: 1em;
@@ -204,6 +190,10 @@ body {
 }
 .menu-item a {
     color: #fff;
+    text-decoration: none;
+}
+.menu-item a:hover {
+    text-decoration: underline;
 }
 .menu-item-link--active {
     border-bottom: 2px solid #fff;
@@ -217,7 +207,7 @@ body {
 }
 .sectionHighlight-title {
     font-size: 1em;
-    font-weight: 500;
+    font-weight: 200;
 }
 .sectionHighlight-title:first-line {
     font-size: 2em;
@@ -278,10 +268,6 @@ body {
     background-image: url("../img/twitter-icon-3b565e39c0.png");
 }
 .sectionCourses {
-    /* display: flex;
-    flex-wrap: wrap;
-    justify-content: center; */
-
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5em; /* Espaçamento entre os cards */
@@ -294,7 +280,7 @@ body {
     padding: 2em 6em; /* Ajustado para manter consistência com o .card-inverted */
     margin: 1em;
     border-radius: 2px;
-    border: 1px solid rgba(255, 255, 255, .5); /* Borda igual ao .card-inverted */
+    border: 1px solid rgba(255, 255, 255, .2); /* Borda igual ao .card-inverted */
     box-shadow: none; /* Remove sombra para manter consistência */
     transition: .3s; /* Transição igual ao .card-inverted */
     display: flex;
