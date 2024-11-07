@@ -204,6 +204,7 @@ body {
 .sectionMinibio-avatar {
     border-radius: 50%;
     margin: 0 0 1.5em;
+    width: 150px;
 }
 .sectionHighlight-title {
     font-size: 1em;
@@ -332,19 +333,45 @@ body {
     color: #fff;
     text-decoration: none;
 }
+.sectionBooks {
+    margin-top: 2em;
+}
 
-
+.books {
+    display: flex;
+    justify-content: center;
+}
+#books h2 {
+    color: #fff;
+}
+#books p {
+    color: #fff;
+}
 .book {
-    width: 12.5em;
-    font-size: 16px;
-    display: inline-block;
+    background-color: rgba(25, 25, 25, .5);
+    backdrop-filter: blur(20px);
+    color: #FFF;
+    padding: 2em 6em;
+    margin: 1em;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    box-shadow: none;
     transition: .3s;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
     text-decoration: none;
+    font-size: 1.2em;
 
 }
 .book:hover,
 .book:focus {
-    transform: scale(1.02)
+    background-color: rgba(25, 25, 25, .5);
+    border: 1px solid rgba(255, 255, 255, 1);
+    transform: translateY(-12px);
 }
 
 .book-cover {
