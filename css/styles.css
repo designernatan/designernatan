@@ -375,9 +375,11 @@ body {
 }
 
 .book-cover {
-    display: inline-block;
+    width: auto;
+    height: auto;
     max-width: 100%;
-    box-shadow: 5px solid;
+    max-height: 400px; /* Define uma altura máxima para manter a proporção */
+    object-fit: contain; /* Mantém a proporção da imagem sem distorcê-la */
 }
 @media (max-width: 768px) {
     .books {
