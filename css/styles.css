@@ -178,12 +178,40 @@ body {
     backdrop-filter: blur(20px);
     position: sticky;
     top: 0;
-    z-index: 1000; 
+    z-index: 1000;
 }
+
+.menu-wrapper {
+    display: flex;
+    align-items: center;
+    padding: .75em;
+}
+
 .menu {
-    max-width: 711px;
-    margin: 0 auto;
+    /* max-width: 711px; */
+    justify-content: center;
+    display: flex;
+    flex: 1;
 }
+.menu-language {
+    position: absolute;
+    right: 2%;
+    display: flex;
+    align-items: center;
+    /* gap: .5em; */
+}
+.menu-language-item {
+    text-decoration: none;
+    display: block;
+    font-size: .75em;
+    color: #fff;
+    padding: 0 .75em 0 .75em;
+}
+
+.menu-language-item-active {
+    text-decoration: underline;
+}
+
 .menu-item {
     display: inline-block;
     padding: 0.3em 3%;
@@ -356,7 +384,7 @@ body {
     padding: 2em 6em;
     margin: 1em;
     border-radius: 2px;
-    border: 1px solid rgba(255, 255, 255, .5);
+    border: 1px solid rgba(255, 255, 255, .2); /* Borda igual ao .card-inverted */
     box-shadow: none;
     transition: .3s;
     display: flex;
