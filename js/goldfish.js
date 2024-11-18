@@ -32,11 +32,11 @@ Alongside my work, I enjoy training my dog and sharing insights on my <a href="h
 
     buttons: {
         pt: {
-            download: 'Baixar currículo',
+            download: ' Baixar currículo',
             mailMe: 'Mandar e-mail'
         },
         en: {
-            download: 'Download resume',
+            download: ' Download resume',
             mailMe: 'Mail me'
         }
     },
