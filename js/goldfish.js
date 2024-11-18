@@ -43,7 +43,7 @@ Alongside my work, I enjoy training my dog and sharing insights on my <a href="h
 
     // Seção de cursos
     coursesSectionTitle: {
-        pt: "Mais de <strong>200.000</strong> estudantes capacitados",
+        pt: "Mais de <strong>200.000</strong> estudantes empoderados",
         en: "Over <strong>200,000</strong> students empowered"
     },
 
