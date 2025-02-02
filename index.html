@@ -1,136 +1,382 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Freelancer for UX Strategy and usability prototype/test, code HTML and CSS - Natan Souza's online portfolio.">
+    <meta name="keywords" content="lead, ux, ux designer, webdesigner, freelancer, front-end, dicas ux">
+    <meta name="author" content="Natan Souza, designernatan@gmail.com">
+    <meta name="theme-color" content="#FDFAF2"> <!-- Same as background color of the menu -->
+    <title>Natan Souza – Portfolio – Product Design Lead</title>
+    <link rel="stylesheet" href="reset.css"> <!-- Added reset.css -->
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Added Google Fonts -->
+    <style>
+        :root {
+            --text-color: #525A7A; /* Applied in all the texts (except headings) */
+            --accent-color: #E4572E;
+            --accent-color-light: #F06A4E; /* Lighter shade for hover */
+            --accent-color-dark: #C13C1E; /* Darker shade for pressed */
+            --background-color: #FDFAF2;
+            --white-color: #FFFFFF;
+            --heading-color: #5FA79B;
+            --border-color: rgba(228, 87, 46, .2);
+            --margin: 64px;
+            --gutter: 32px;
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+            /* Headings */
+            --heading-90: 90px;
+            --heading-67: 67px;
+            --heading-51: 51px;
+            --heading-38: 38px;
+            --heading-28: 28px;
+            --heading-21: 21px;
+            --heading-16: 16px;
+            --heading-12: 12px;
+            --heading-9: 9px;
 
-    <title>Natan Souza – Portfolio – UX Designer, Freelancer, Front-End</title>
-    <meta
-        name="description"
-        content="Freelancer for UX Strategy and usabiltiy prototype/test, code Html e CSS - Natan Souza's online portfolio.">
-    <meta
-        name="keywords"
-        content="ux, ux designer, webdesigner, freelancer, front-end, freela">
-    <meta name="Author" content="Natan Souza, designernatan@gmail.com">
-    <meta name="theme-color" content="#393844">
+            /* Body */
+            --body-89: 89.8px;
+            --body-67: 67.3px;
+            --body-50: 50.5px;
+            --body-37: 37.9px;
+            --body-28: 28.4px;
+            --body-21: 21.3px;
+            --body-16: 16px;
+            --body-12: 12px;
+            --body-9: 9px;
+        }
+        body {
+            background-color: var(--white-color);
+            font-family: 'Nunito', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            color: var(--text-color);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.1; 
+            color: var(--heading-color);
+        }
+        h1 {
+            font-size: var(--heading-67);
+        }
+        p {
+          opacity: 80%;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: var(--gutter);
+            margin: 0 auto;
+        }
+        .navbar-wrapper {
+            width: 100%;
+        }
+        .navbar {
+            width: 100%; /* Take the entire width of the page */
+            position: sticky; /* Make it sticky */
+            top: 0; /* Stick to the top */
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--background-color);
+            z-index: 1000; /* Ensure it stays above other content */
+        }
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+        }
+        .navbar a {
+            position: relative;
+            text-decoration: none;
+            color: var(--text-color);
+            font-size: var(--body-16);
+            transition: color 0.3s; /* Smooth transition for color */
+        }
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: -4px;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        .navbar a:hover::after, .navbar a:focus::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .navbar a.active::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        .profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* padding: 50px; */
+            gap: 55px; /* Apply horizontal gap between internal contents */
+            width: 100%;
+            margin: 136px 0
+        }
+        .text-content {
+            max-width: 612px;
+        }
+        .intro {
+            font-size: var(--body-37);
+            color: var(--text-color);
+        }
+        .name {
+            font-size: var(--heading-90);
+            color: var(--heading-color);
+            margin-left: -4px;
+        }
+        .description {
+            font-size: var(--body-21);
+            color: var(--text-color);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-flex; /* Use inline-flex for proper alignment */
+            align-items: center; /* Center align items */
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: var(--body-16);
+            margin-right: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover and pressed effects */
+        }
+        .btn:hover {
+            background-color: var(--accent-color-light); /* Lighter shade on hover */
+        }
+        .btn:active {
+            background-color: var(--accent-color-dark); /* Darker shade on pressed */
+        }
+        .linkedin {
+            background-color: var(--accent-color);
+            color: var(--white-color);
+        }
+        .download, .mail {
+            border: 2px solid var(--accent-color);
+            color: var(--accent-color);
+        }
+        .download:hover, .mail:hover {
+            background-color: var(--accent-color-light);
+            color: var(--white-color);
+        }
+        .download:active, .mail:active {
+            background-color: var(--accent-color-dark);
+            color: var(--white-color);
+        }
+        .profile-image img {
+            width: 318px;
+            height: 318px;
+            border-radius: 50%;
+        }
 
-    <script src="js/ga.js"></script>
-    <script src="js/goldfish.js"></script>
+        /* Container que centraliza a seção dos case studies */
+.case-study-container {
+  max-width: 1312px;
+  margin: 0 auto;
+  padding: 0 16px; /* Espaçamento lateral para telas menores */
+}
+
+/* Grid para os case studies */
+.case-study-section {
+  display: grid;
+  grid-template-columns: 640px 640px; /* Duas colunas de 640px */
+  gap: 32px; /* Espaço de 32px entre os cards */
+  margin-top: var(--margin);
+}
+
+/* Estilos dos cards (case-study) */
+.case-study {
+  background-color: var(--background-color);
+  padding: 64px 44px 0 44px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  transition: box-shadow 0.3s /* Smooth transition for shadow */
+}
+
+.case-study:hover, .case-study:active {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover and active */
+
+}
+
+.case-study h2 {
+  font-size: var(--heading-38);
+  color: var(--text-color);
+  margin-bottom: 1em;
+}
+
+.case-study p {
+  font-size: var(--body-21);
+  color: var(--text-color); /* Corrigido: sem espaço entre "var" e "(" */
+  margin-bottom: 1.5em;
+}
+
+.case-study a {
+  font-size: var(--body-21);
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s; /* Smooth transition for color */
+}
+
+.case-study a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.case-study a:hover::after, .case-study a:focus::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.case-study img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: var(--gutter);
+}
+
+/* Responsividade: para telas menores, exibir 1 card por linha */
+@media (max-width: 1312px) {
+  .case-study-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+footer {
+  padding: var(--margin) 0;
+  text-align: center;
+  padding: 10em 0
+}
+
+footer h2 {
+  font-size: var(--heading-28);
+  color: var(--text-color);
+  margin-bottom: 1em;
+}
+
+footer p {
+  font-size: var(--body-21);
+  color: var(--text-color);
+}
+
+footer a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s; /* Smooth transition for color */
+}
+
+footer a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+  bottom: -4px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+footer a:hover::after, footer a:focus::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+    </style>
 </head>
 <body>
-    <header class="header container">
-        <nav class="menu-wrapper">
-            <ul class="menu">
-                <li class="menu-item">
-                    <a href="#" class="menu-item-link menu-item-link--active">About</a>
-                </li>
-                <li class="menu-item">
-                    <a
-                        href="https://www.figma.com/file/CHDJxuSWVZmdPOxY6ytU9FXP/Some-of-my-work---Natan-Souza"
-                        class="menu-item-link">Work</a>
-                </li>
-                <li class="menu-item">
-                    <a
-                        href="https://translate.google.com/translate?sl=pt&tl=en&u=https%3A%2F%2Fwww.dicasux.com.br"
-                        class="menu-item-link">Blog UX Tips</a>
-                </li>
-                <li class="menu-item">
-                    <a
-                        href="courses.html"
-                        class="menu-item-link">Courses</a>
-                </li>
-                <li class="menu-item">
-                    <a
-                        href="#books"
-                        class="menu-item-link menu-item-link--books">Books</a>
-                </li>
-                <li class="menu-item">
-                    <a href="mailto:designernatan@gmail.com" class="menu-item-link">Contact</a>
-                </li>
-
-                <div class="menu-language">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 21C10.7613 21 9.59467 20.7633 8.50001 20.29C7.40534 19.816 6.45201 19.1727 5.64001 18.36C4.82801 17.5473 4.18467 16.594 3.71001 15.5C3.23534 14.406 2.99867 13.2393 3.00001 12C3.00001 10.7573 3.23667 9.58967 3.71001 8.497C4.18401 7.40367 4.82734 6.45133 5.64001 5.64C6.45267 4.82867 7.40601 4.18533 8.50001 3.71C9.59467 3.23667 10.7613 3 12 3C13.2427 3 14.4103 3.23667 15.503 3.71C16.5963 4.184 17.549 4.82733 18.361 5.64C19.173 6.45267 19.816 7.405 20.29 8.497C20.7633 9.59033 21 10.758 21 12C21 13.2387 20.7633 14.4053 20.29 15.5C19.816 16.5947 19.1727 17.548 18.36 18.36C17.5473 19.172 16.595 19.8153 15.503 20.29C14.411 20.7647 13.2433 21.0013 12 21ZM12 20.008C12.5867 19.254 13.0707 18.5137 13.452 17.787C13.8327 17.0603 14.1423 16.247 14.381 15.347H9.61901C9.88367 16.2977 10.1997 17.1363 10.567 17.863C10.935 18.5897 11.4127 19.3047 12 20.008ZM10.727 19.858C10.2603 19.308 9.83434 18.628 9.44901 17.818C9.06367 17.0087 8.77701 16.1847 8.58901 15.346H4.75401C5.32734 16.5893 6.13967 17.6093 7.19101 18.406C8.24301 19.202 9.42167 19.686 10.727 19.858ZM13.273 19.858C14.5783 19.686 15.757 19.202 16.809 18.406C17.8603 17.6093 18.6727 16.5893 19.246 15.346H15.412C15.1587 16.1973 14.8397 17.0277 14.455 17.837C14.0697 18.647 13.6757 19.3213 13.273 19.858ZM4.34601 14.347H8.38101C8.30501 13.9363 8.25167 13.5363 8.22101 13.147C8.18901 12.7583 8.17301 12.376 8.17301 12C8.17301 11.624 8.18867 11.2417 8.22001 10.853C8.25134 10.4643 8.30467 10.0643 8.38001 9.653H4.34701C4.23834 9.99967 4.15334 10.3773 4.09201 10.786C4.03067 11.194 4.00001 11.5987 4.00001 12C4.00001 12.4013 4.03034 12.8063 4.09101 13.215C4.15167 13.6237 4.23667 14.0007 4.34601 14.346M9.38101 14.346H14.619C14.695 13.936 14.7483 13.5427 14.779 13.166C14.811 12.79 14.827 12.4013 14.827 12C14.827 11.5987 14.8113 11.21 14.78 10.834C14.7487 10.458 14.6953 10.0647 14.62 9.654H9.38001C9.30467 10.064 9.25134 10.4573 9.22001 10.834C9.18867 11.21 9.17301 11.5987 9.17301 12C9.17301 12.4013 9.18867 12.79 9.22001 13.166C9.25134 13.542 9.30567 13.9353 9.38101 14.346ZM15.62 14.346H19.654C19.7627 14 19.8477 13.623 19.909 13.215C19.9697 12.8063 20 12.4013 20 12C20 11.5987 19.9697 11.1937 19.909 10.785C19.8483 10.3763 19.7633 9.99933 19.654 9.654H15.619C15.695 10.064 15.7483 10.4637 15.779 10.853C15.811 11.2423 15.827 11.6247 15.827 12C15.827 12.3753 15.8113 12.7577 15.78 13.147C15.7487 13.5363 15.6953 13.9363 15.62 14.347M15.412 8.654H19.246C18.66 7.38467 17.8573 6.36467 16.838 5.594C15.8187 4.82333 14.6303 4.333 13.273 4.123C13.7397 4.737 14.1593 5.43933 14.532 6.23C14.9047 7.02 15.198 7.828 15.412 8.654ZM9.61901 8.654H14.381C14.117 7.71533 13.7913 6.86667 13.404 6.108C13.0167 5.34933 12.5487 4.644 12 3.992C11.4513 4.64333 10.9833 5.34867 10.596 6.108C10.2087 6.86733 9.88234 7.716 9.61901 8.654ZM4.75501 8.654H8.58901C8.80301 7.82867 9.09634 7.02067 9.46901 6.23C9.84167 5.43933 10.2613 4.737 10.728 4.123C9.35867 4.33367 8.16734 4.827 7.15401 5.603C6.14067 6.38033 5.34067 7.397 4.75401 8.653" fill="white"/>
-                  </svg>
-  
-                  <a href="#" id="lang-pt" class="menu-language-item">PT-BR</a>
-                  <a href="#" id="lang-en" class="menu-language-item menu-language-item-active">EN</a>
-                </div>
-                
-            </ul>
-        </nav>
-    </header>
-    <main class="main container">
-          <div class="card">
-              <section class="sectionHighlight">
-                <h1 class="sectionHighlight-title">
-                  Natan&nbsp;Souza<br>Product Design Lead</h1>
-
-                  <!-- <p class="sectionMinibio-text">
-                    Just a 34 yo designer who loves UX and lead people!
-                  </p> -->
-              </section>
-              <section class="sectionMinibio"><img
-                  src="img/product-design-lead-natan-souza2.jpg"
-                  alt="Natan Souza"
-                  class="sectionMinibio-avatar">
-                  <p>
-                    As a <strong>designer and leader,</strong> my career centers around enhancing user experience, especially in education. I've taught diverse groups, led impactful projects, and developed a deep understanding of product and business strategy. I thrive on creative problem-solving and continually seek new knowledge. 
-                  </p>
-                  <br>
-                  <!-- <p>
-                    Alongside my work, I enjoy training my dog and sharing insights on my <a href="https://translate.google.com/translate?sl=pt&tl=en&u=https%3A%2F%2Fwww.dicasux.com.br">blog UX TIps</a>, as well as throught my two published books on front-end development.  
-                  </p> -->
-              </section>
-              <section class="sectionSocial">
-                <a href="https://www.linkedin.com/in/designernatan" class="sectionSocial-button">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
-                  </svg>
-                  LinkedIn
-                </a>
-                <a href="download/cv-natan-ing-brazil.pdf" download class="sectionSocial-button button-ghost">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-arrow-down-fill" viewBox="0 0 16 16">
-                    <path d="M8 2a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 6.095 0 7.555 0 9.318 0 11.366 1.708 13 3.781 13h8.906C14.502 13 16 11.57 16 9.773c0-1.636-1.242-2.969-2.834-3.194C12.923 3.999 10.69 2 8 2m2.354 6.854-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 1 1 .708-.708L7.5 9.293V5.5a.5.5 0 0 1 1 0v3.793l1.146-1.147a.5.5 0 0 1 .708.708"/>
-                  </svg>
-                  Download resume
-                </a>
-                <a href="mailto:designernatan@gmail.com" class="sectionSocial-button button-ghost" target="_blank">
-                  Mail me
-                </a>
-              </section>
-          </div>
-
-        <div class="sectionBooks" id="books">
-          <h2>Published books</h2>
-          <p>Proud author with over a thousand copies sold</p><br>
-          <div class="books">
-            <a
-                class="book"
-                href="https://www.casadocodigo.com.br/products/livro-bootstrap4">
-                <img
-                src="img/book-bootstrap.jpg"
-                alt="Capa Livro Bootstrap 4"
-                class="book-cover">
-                Bootstrap 4: The most used front-end library
-            </a>
-            <a
-                class="book"
-                href="https://www.casadocodigo.com.br/products/livro-sass">
-                <img
-                src="img/book-sass.jpg"
-                alt="Capa Livro Sass"
-                class="book-cover">
-                Sass: Learning CSS Preprocessors from zero
-              </a>
-            </div>
+    <div class="container">
+        <div class="navbar-wrapper">
+            <nav class="navbar">
+                <ul>
+                    <li><a href="/" class="active">Home</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#">UX Tips</a></li>
+                    <li><a href="#">Courses</a></li>
+                    <li><a href="#">Books</a></li>
+                    <li><a href="mailto:designernatan@gmail.com">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-    </main>
+        
+        <section class="profile">
+            <div class="text-content">
+                <p class="intro">Hi, I’m</p>
+                <h1 class="name">Natan Souza</h1>
+                <p class="description">a guy who loves crafting product design and leading teams to build meaningful experiences</p>
+                <div class="buttons">
+                    <a href="#" class="btn linkedin">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" style="margin-right: 8px;">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                      </svg>
+                      LinkedIn
+                    </a>
+                    <a href="#" class="btn download">Download resume</a>
+                    <a href="#contact" class="btn mail">Contact</a>
+                </div>
+            </div>
+            <div class="profile-image">
+                <img src="img/product-design-lead-natan-souza.jpg" alt="Natan Souza">
+            </div>
+        </section>
+        <section class="case-study-container" id="work">
+          <section class="case-study-section">
+            <div class="case-study">
+              <h2>MyStudio - Start by WGSN</h2>
+              <p>SaaS platform designed for fashion stylists, providing essential image-based insights that inform, inspire, and support decision-making and collaboration.</p>
+              <a href="#">Read case study</a>
+              <img alt="MyStudio Project Screenshot" src="img/start.png">
+            </div>
+            <div class="case-study">
+              <h2>Analytical B2B Dashboard</h2>
+              <p>Analytical and management dashboard for brazilian B2B MOOC (Alura Corp). Researches, usability tests, interviews, UI.</p>
+              <a href="#">Read case study</a>
+              <img alt="MyStudio Project Screenshot" src="img/dash.png">
+            </div>
+            <div class="case-study">
+              <h2>MyStudio - Start by WGSN</h2>
+              <p>SaaS platform designed for fashion stylists, providing essential image-based insights that inform, inspire, and support decision-making and collaboration.</p>
+              <a href="#">Read case study</a>
+              <img alt="MyStudio Project Screenshot" src="img/start.png">
+            </div>
+            <div class="case-study">
+              <h2>MyStudio - Start by WGSN</h2>
+              <p>SaaS platform designed for fashion stylists, providing essential image-based insights that inform, inspire, and support decision-making and collaboration.</p>
+              <a href="#">Read case study</a>
+              <img alt="MyStudio Project Screenshot" src="img/start.png">
+            </div>
+          </section>
+        </section>
+        <footer id="contact">
+          <h2>Contact</h2>
+          <p>Feel free to contact me on <a href="https://www.linkedin.com/in/designernatan/" target="_blank">LinkedIn</a> or <a href="mailto:designernatan@gmail.com">designernatan@gmail.com</a></p>
+        </footer>
+    </div>
 </body>
 </html>
