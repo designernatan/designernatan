@@ -11,22 +11,20 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <script src="js/lightbox.js" defer></script>
+
 </head>
 <body>
     <div class="container">
-        <div class="navbar-wrapper">
-            <nav class="navbar">
-                <ul>
-                    <li><a href="/" class="active">Home</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#">UX Tips</a></li>
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Books</a></li>
-                    <li><a href="mailto:designernatan@gmail.com">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-        
+        <div id="navbar"></div> <!-- Placeholder for the navigation -->
+        <script>
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                });
+        </script>
+      
         <section class="profile hero">
             <div class="text-content">
                 <p class="intro">#saas #b2b #fashion</p>
@@ -108,40 +106,91 @@
             </div>
         </div> 
 
+        <!-- Solution Section -->
         <section class="solution-section">
-            <div class="container" style="display: flex; flex-direction: row;align-items: center;">
+            <div class="container">
                 <div class="col-5">
-                <h2>Solution</h2>
-                <p>I redesigned the platform with a clean, structured UI, improving navigation and reducing cognitive load. Features like organized moodboards, seamless collaboration tools, and intuitive trend discovery streamlined the user experience, making decision-making <strong>more efficient.</strong></p>
-            </div>
+                    <h2>Solution</h2>
+                    <p>I redesigned the platform with a clean, structured UI, improving navigation and reducing cognitive load. Features like organized moodboards, seamless collaboration tools, and intuitive trend discovery streamlined the user experience, making decision-making <strong>more efficient.</strong></p>
+                </div>
                 <div class="solution-images">
-                    <img src="img/start1.jpg" alt="Solution Image 1">
-                    <img src="img/start2.jpg" alt="Solution Image 2">
-                    <img src="img/start3.jpg" alt="Solution Image 3">
+                    <a href="img/start1.jpg" class="lightbox-trigger">
+                        <img src="img/start1.jpg" alt="Solution Image 1">
+                    </a>
+                    <a href="img/start2.jpg" class="lightbox-trigger">
+                        <img src="img/start2.jpg" alt="Solution Image 2">
+                    </a>
+                    <a href="img/start3.jpg" class="lightbox-trigger">
+                        <img src="img/start3.jpg" alt="Solution Image 3">
+                    </a>
                 </div>
             </div>
         </section>
 
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+            <div class="lightbox-navigation">
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+            </div>
+        </div>
+
         <section class="results-section">
             <div class="container">
-                <h2>Results</h2>
                 <div class="row">
-                    <div class="col-4 result-card">
+                <h2>Results</h2></div>
+                <div class="row">
+                    <div class="col-3 result-card">
                         <div class="result-number">85%</div>
-                        <p>Increase in user engagement</p>
+                        <p>users</p>
                     </div>
-                    <div class="col-4 result-card">
+                    <div class="col-3 result-card">
                         <div class="result-number">50%</div>
-                        <p>Reduction in task completion time</p>
+                        <p>adoption rate</p>
                     </div>
-                    <div class="col-4 result-card">
+                    <div class="col-3 result-card">
                         <div class="result-number">30%</div>
-                        <p>Improvement in user retention</p>
+                        <p>user engagement</p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
+        <div class="row learnings">
+            <div class="col-3" style="margin: 0 auto;">
+                <div class="content">
+                    <h2>Learnings</h2>
+                    <ol>
+                        <li>Designing for fashion professionals requires a deep understanding of their workflow and pain points.</li>
+                        <li>Iterative design and usability testing are essential for creating a seamless user experience.</li>
+                        <li>Collaboration and trend discovery tools are key features that drive user engagement and adoption.</li>
+                    </ol>
+                    </div>
+            </div>
+        </div>
+
+        <section class="bottomNav">
+            <div class="bottomNavButtons col-4">
+                <a href="/" class="btn download btnHome">
+                    Home
+                </a>
+                <a href="/dash.html" class="btn linkedin btnNext">
+                    Next project
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M21 3.75781C21 3.5589 20.921 3.36813 20.7803 3.22748C20.6397 3.08683 20.4489 3.00781 20.25 3.00781C20.0511 3.00781 19.8603 3.08683 19.7197 3.22748C19.579 3.36813 19.5 3.5589 19.5 3.75781V20.2578C19.5 20.4567 19.579 20.6475 19.7197 20.7881C19.8603 20.9288 20.0511 21.0078 20.25 21.0078C20.4489 21.0078 20.6397 20.9288 20.7803 20.7881C20.921 20.6475 21 20.4567 21 20.2578V3.75781ZM3 4.51081C2.99982 4.23547 3.07542 3.96539 3.21853 3.73016C3.36164 3.49494 3.56674 3.30364 3.81135 3.17723C4.05596 3.05082 4.33064 2.99417 4.6053 3.0135C4.87996 3.03283 5.14401 3.12739 5.3685 3.28681L15.8685 10.7313C16.0635 10.8694 16.2226 11.052 16.3328 11.2639C16.4429 11.4759 16.5008 11.7111 16.5017 11.95C16.5026 12.1889 16.4464 12.4245 16.3378 12.6373C16.2293 12.8501 16.0714 13.0338 15.8775 13.1733L5.3775 20.7288C5.1535 20.8904 4.88924 20.987 4.61384 21.0079C4.33845 21.0289 4.06261 20.9734 3.81674 20.8476C3.57087 20.7218 3.3645 20.5306 3.22039 20.2949C3.07627 20.0593 3.00001 19.7885 3 19.5123V4.51081ZM15 11.9553L7.80004 10.7313L4.5 19.5108L3.81674 4.51081L15 11.9553Z" fill="white"/>
+                        </svg>
+                </a>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <h2>Contact</h2>
+            <p>Feel free to contact me on <a href="https://www.linkedin.com/in/designernatan/" target="_blank">LinkedIn</a> or <a href="mailto:designernatan@gmail.com">designernatan@gmail.com</a></p>
+          </footer>
+
     </div>
+    
 </body>
 </html>

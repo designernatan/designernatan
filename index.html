@@ -3,327 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Freelancer for UX Strategy and usability prototype/test, code HTML and CSS - Natan Souza's online portfolio.">
-    <meta name="keywords" content="lead, ux, ux designer, webdesigner, freelancer, front-end, dicas ux">
+    <meta name="description" content="Natan Souza's online portfolio showcasing UX Strategy, usability prototype/test, HTML and CSS coding skills.">
+    <meta name="keywords" content="UX, UX designer, webdesigner, freelancer, front-end, UX tips, product design, Natan Souza">
     <meta name="author" content="Natan Souza, designernatan@gmail.com">
     <meta name="theme-color" content="#FDFAF2"> <!-- Same as background color of the menu -->
     <title>Natan Souza – Portfolio – Product Design Lead</title>
     <link rel="stylesheet" href="reset.css"> <!-- Added reset.css -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css"> <!-- Added styles.css -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet"> <!-- Added Google Fonts -->
-    <style>
-        :root {
-            --text-color: #525A7A; /* Applied in all the texts (except headings) */
-            --accent-color: #E4572E;
-            --accent-color-light: #F06A4E; /* Lighter shade for hover */
-            --accent-color-dark: #C13C1E; /* Darker shade for pressed */
-            --background-color: #FDFAF2;
-            --white-color: #FFFFFF;
-            --heading-color: #5FA79B;
-            --border-color: rgba(228, 87, 46, .2);
-            --margin: 64px;
-            --gutter: 32px;
-
-            /* Headings */
-            --heading-90: 90px;
-            --heading-67: 67px;
-            --heading-51: 51px;
-            --heading-38: 38px;
-            --heading-28: 28px;
-            --heading-21: 21px;
-            --heading-16: 16px;
-            --heading-12: 12px;
-            --heading-9: 9px;
-
-            /* Body */
-            --body-89: 89.8px;
-            --body-67: 67.3px;
-            --body-50: 50.5px;
-            --body-37: 37.9px;
-            --body-28: 28.4px;
-            --body-21: 21.3px;
-            --body-16: 16px;
-            --body-12: 12px;
-            --body-9: 9px;
-        }
-        body {
-            background-color: var(--white-color);
-            font-family: 'Nunito', sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.5;
-            color: var(--text-color);
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.1; 
-            color: var(--heading-color);
-        }
-        h1 {
-            font-size: var(--heading-67);
-        }
-        p {
-          opacity: 80%;
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            gap: var(--gutter);
-            margin: 0 auto;
-        }
-        .navbar-wrapper {
-            width: 100%;
-        }
-        .navbar {
-            width: 100%; /* Take the entire width of the page */
-            position: sticky; /* Make it sticky */
-            top: 0; /* Stick to the top */
-            height: 72px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--background-color);
-            z-index: 1000; /* Ensure it stays above other content */
-        }
-        .navbar ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            padding: 0;
-        }
-        .navbar a {
-            position: relative;
-            text-decoration: none;
-            color: var(--text-color);
-            font-size: var(--body-16);
-            transition: color 0.3s; /* Smooth transition for color */
-        }
-        .navbar a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            background-color: var(--accent-color);
-            bottom: -4px;
-            left: 0;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
-        .navbar a:hover::after, .navbar a:focus::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-        .navbar a.active::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-        .profile {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            /* padding: 50px; */
-            gap: 55px; /* Apply horizontal gap between internal contents */
-            width: 100%;
-            margin: 136px 0
-        }
-        .text-content {
-            max-width: 612px;
-        }
-        .intro {
-            font-size: var(--body-37);
-            color: var(--text-color);
-        }
-        .name {
-            font-size: var(--heading-90);
-            color: var(--heading-color);
-            margin-left: -4px;
-        }
-        .description {
-            font-size: var(--body-21);
-            color: var(--text-color);
-        }
-        .buttons {
-            margin-top: 20px;
-        }
-        .btn {
-            display: inline-flex; /* Use inline-flex for proper alignment */
-            align-items: center; /* Center align items */
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-size: var(--body-16);
-            margin-right: 10px;
-            text-decoration: none;
-            transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover and pressed effects */
-        }
-        .btn:hover {
-            background-color: var(--accent-color-light); /* Lighter shade on hover */
-        }
-        .btn:active {
-            background-color: var(--accent-color-dark); /* Darker shade on pressed */
-        }
-        .linkedin {
-            background-color: var(--accent-color);
-            color: var(--white-color);
-        }
-        .download, .mail {
-            border: 2px solid var(--accent-color);
-            color: var(--accent-color);
-        }
-        .download:hover, .mail:hover {
-            background-color: var(--accent-color-light);
-            color: var(--white-color);
-        }
-        .download:active, .mail:active {
-            background-color: var(--accent-color-dark);
-            color: var(--white-color);
-        }
-        .profile-image img {
-            width: 318px;
-            height: 318px;
-            border-radius: 50%;
-        }
-
-        /* Container que centraliza a seção dos case studies */
-.case-study-container {
-  max-width: 1312px;
-  margin: 0 auto;
-  padding: 0 16px; /* Espaçamento lateral para telas menores */
-}
-
-/* Grid para os case studies */
-.case-study-section {
-  display: grid;
-  grid-template-columns: 640px 640px; /* Duas colunas de 640px */
-  gap: 32px; /* Espaço de 32px entre os cards */
-  margin-top: var(--margin);
-}
-
-/* Estilos dos cards (case-study) */
-.case-study {
-  background-color: var(--background-color);
-  padding: 64px 44px 0 44px;
-  border-radius: 8px;
-  border: 1px solid var(--border-color);
-  transition: box-shadow 0.3s /* Smooth transition for shadow */
-}
-
-.case-study:hover, .case-study:active {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on hover and active */
-
-}
-
-.case-study h2 {
-  font-size: var(--heading-38);
-  color: var(--text-color);
-  margin-bottom: 1em;
-}
-
-.case-study p {
-  font-size: var(--body-21);
-  color: var(--text-color); /* Corrigido: sem espaço entre "var" e "(" */
-  margin-bottom: 1.5em;
-}
-
-.case-study a {
-  font-size: var(--body-21);
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  transition: color 0.3s; /* Smooth transition for color */
-}
-
-.case-study a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: var(--accent-color);
-  bottom: -4px;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
-}
-
-.case-study a:hover::after, .case-study a:focus::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-.case-study img {
-  width: 100%;
-  border-radius: 8px;
-  margin-top: var(--gutter);
-}
-
-/* Responsividade: para telas menores, exibir 1 card por linha */
-@media (max-width: 1312px) {
-  .case-study-section {
-    grid-template-columns: 1fr;
-  }
-}
-
-footer {
-  padding: var(--margin) 0;
-  text-align: center;
-  padding: 10em 0
-}
-
-footer h2 {
-  font-size: var(--heading-28);
-  color: var(--text-color);
-  margin-bottom: 1em;
-}
-
-footer p {
-  font-size: var(--body-21);
-  color: var(--text-color);
-}
-
-footer a {
-  color: var(--accent-color);
-  text-decoration: none;
-  font-weight: bold;
-  position: relative;
-  transition: color 0.3s; /* Smooth transition for color */
-}
-
-footer a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  background-color: var(--accent-color);
-  bottom: -4px;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: bottom right;
-  transition: transform 0.3s ease-out;
-}
-
-footer a:hover::after, footer a:focus::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-    </style>
 </head>
 <body>
     <div class="container">
-        <div class="navbar-wrapper">
-            <nav class="navbar">
-                <ul>
-                    <li><a href="/" class="active">Home</a></li>
-                    <li><a href="#work">Work</a></li>
-                    <li><a href="#">UX Tips</a></li>
-                    <li><a href="#">Courses</a></li>
-                    <li><a href="#">Books</a></li>
-                    <li><a href="mailto:designernatan@gmail.com">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        <div id="navbar"></div> <!-- Placeholder for the navigation -->
+        <script>
+          fetch('navbar.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('navbar').innerHTML = data;
+      
+                  // Agora que a navbar foi carregada, podemos executar o script corretamente
+                  const homeLink = document.getElementById("home-link");
+                  const path = window.location.pathname;
+      
+                  if (homeLink && (path === "/" || path.endsWith("/index.html") || path.endsWith("/index"))) {
+                      homeLink.classList.add("active");
+                  }
+              });
+      </script>
+      
         
         <section class="profile">
             <div class="text-content">
@@ -373,10 +80,14 @@ footer a:hover::after, footer a:focus::after {
             </div>
           </section>
         </section>
-        <footer id="contact">
-          <h2>Contact</h2>
-          <p>Feel free to contact me on <a href="https://www.linkedin.com/in/designernatan/" target="_blank">LinkedIn</a> or <a href="mailto:designernatan@gmail.com">designernatan@gmail.com</a></p>
-        </footer>
+        <div id="footer"></div> <!-- Placeholder for the footer -->
+        <script>
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer').innerHTML = data;
+                });
+        </script>
     </div>
 </body>
 </html>

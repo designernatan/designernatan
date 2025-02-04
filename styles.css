@@ -41,6 +41,7 @@ body {
     padding: 0;
     line-height: 1.5;
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -56,8 +57,8 @@ h1 {
 
 p {
     opacity: 80%;
-    margin-bottom: 32px; /* Paragraph spacing */
 }
+
 strong {
     font-weight: 500;
     color: var(--heading-color);
@@ -294,14 +295,24 @@ strong {
 /* Solution Section Styles */
 .solution-section {
     width: 100%;
-    background-color: var(--background-color);
+    background: linear-gradient(
+        white 10%, 
+        var(--background-color) 10%, 
+        var(--background-color) 90%, 
+        white 90%
+    );
     padding: var(--margin) 0;
+    position: relative;
 }
 
 .solution-section .container {
     max-width: 1312px;
     margin: 0 auto;
     padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gutter);
 }
 
 .solution-section h2 {
@@ -315,15 +326,16 @@ strong {
     color: var(--text-color);
 }
 
+/* Container das imagens */
 .solution-images {
     display: flex;
     flex-direction: column;
     gap: var(--gutter);
 }
 
+/* Mantém todas as imagens no fluxo normal, mas cria a ilusão de sobreposição */
 .solution-images img {
     width: 100%;
-    border-radius: 8px;
 }
 
 /* Results Section Styles */
@@ -335,6 +347,7 @@ strong {
 
 .results-section .row {
     padding: 0;
+    justify-content: center;
 }
 
 .results-section .container {
@@ -355,12 +368,28 @@ strong {
     padding: 32px;
     border-radius: 8px;
     text-align: center;
+    margin: 0 1em;
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.result-card:hover, .result-card:active {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-12px);
+}
+
+.result-card p {
+    font-size: var(--body-28);
+    color: var(--heading-color);
+}
+
+.result-card:first-of-type {
+    margin-left: 0;
 }
 
 .result-number {
     font-size: var(--heading-67);
     color: var(--accent-color);
-    margin-bottom: 16px;
 }
 
 /* Footer Styles */
@@ -440,7 +469,6 @@ footer a:hover::after, footer a:focus::after {
     font-size: var(--body-21);
 }
 
-
 /* KPI Section Styles */
 .kpi-section {
     background-color: var(--white-color);
@@ -468,6 +496,7 @@ footer a:hover::after, footer a:focus::after {
     font-size: var(--heading-38);
     margin-bottom: 24px;
 }
+
 .problem-section p {
     font-size: var(--body-21);
     color: var(--text-color);
@@ -479,6 +508,10 @@ footer a:hover::after, footer a:focus::after {
     justify-content: center;
     border-radius: 8px;
     overflow: hidden;
+}
+
+.process-steps + .row {
+    margin-top: -4em;
 }
 
 .process-step {
@@ -494,6 +527,10 @@ footer a:hover::after, footer a:focus::after {
     font-family: 'Poppins', sans-serif;
     text-align: center;
     color: var(--text-color);
+}
+
+.content-process p {
+    margin-bottom: 1em;
 }
 
 .process-step:not(:last-child)::after {
@@ -534,6 +571,129 @@ footer a:hover::after, footer a:focus::after {
         content: '';
     }
 }
+
+.learnings ol {
+    list-style: number;
+    padding-left: 20px;
+}
+
+.learnings li {
+    margin-bottom: 1em;
+    font-size: var(--body-21);
+    margin-bottom: 24px;
+}
+
+.learnings h2 {
+    font-size: var(--heading-38);
+    margin-bottom: 24px;
+}
+
+/* Bottom Navigation Styles */
+.bottomNav {
+    width: 100%;
+    background-color: var(--heading-color);
+    padding: 70px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.bottomNavButtons {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.btnHome {
+    background-color: var(--background-color);
+}
+
+.btnNext {
+    font-size: var(--body-21);
+    padding: 16px 40px;
+    display: flex;
+    gap: 1em;
+}
+
+
+/* Lightbox - Modal */
+.lightbox {
+    display: none; /* Oculta o modal ao carregar a página */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Exibe apenas quando a classe "active" for adicionada via JS */
+.lightbox.active {
+    display: flex;
+}
+
+
+/* Conteúdo do Lightbox (Imagem em destaque) */
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Botão de Fechar */
+.lightbox .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.lightbox .close:hover {
+    opacity: 0.7;
+}
+
+/* Navegação entre imagens */
+.lightbox-navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.lightbox-navigation .prev,
+.lightbox-navigation .next {
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 10px;
+    transition: opacity 0.3s;
+}
+
+.lightbox-navigation .prev {
+    position: absolute;
+    left: 30px;
+}
+
+.lightbox-navigation .next {
+    position: absolute;
+    right: 30px;
+}
+
+.lightbox-navigation .prev:hover,
+.lightbox-navigation .next:hover {
+    opacity: 0.7;
+}
+
+
 
 /* Grid System */
 .grid-container {

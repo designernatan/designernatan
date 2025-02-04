@@ -1,0 +1,23 @@
+<div class="navbar-wrapper">
+    <nav class="navbar">
+        <ul>
+            <li><a href="/" id="home-link">Home</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#">UX Tips</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="#">Books</a></li>
+            <li><a href="mailto:designernatan@gmail.com">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const homeLink = document.getElementById("home-link");
+        const path = window.location.pathname;
+
+        // Verifica se está na home de diferentes formas
+        if (homeLink && (path === "/" || path.endsWith("/index.html") || path.endsWith("/index"))) {
+            homeLink.classList.add("active");
+        }
+    });
+</script>
