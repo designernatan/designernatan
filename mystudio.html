@@ -8,13 +8,13 @@
     <meta name="author" content="Natan Souza, designernatan@gmail.com">
     <meta name="theme-color" content="#FDFAF2"> <!-- Same as background color of the menu -->
     <title>MyStudio - Start by WGSN</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <script src="js/lightbox.js" defer></script>
 
 </head>
-<body>
+<body id="mystudio-page">
     <div class="container">
         <div id="navbar"></div> <!-- Placeholder for the navigation -->
         <script>
@@ -25,19 +25,27 @@
                 });
         </script>
       
-        <section class="profile hero">
+        <section class="profile hero grid-container">
             <div class="text-content">
                 <p class="intro">#saas #b2b #fashion</p>
-                <h1 class="name">MyStudio - Start by WGSN</h1>
-                <p class="description">A seamless SaaS experience for fashion professionals.</p>
+                <h1 class="name">MyStudio, Start by WGSN</h1>
+                <p class="description">A seamless SaaS experience for fashion professionals</p>
+                <div class="buttons">
+                    <a href="#solution" class="btn linkedin">
+                      Solution
+                    </a>
+                    <a href="#results" class="btn download">Results</a>
+                </div>
             </div>
             <div class="profile-image">
+                <a href="#solution">
                 <img src="img/start/start-hero.jpg" alt="MyStudio Project">
+            </a>
             </div>
         </section>
 
         <section class="grid-container">
-            <div class="row" style="justify-content: center;">
+            <div class="row">
                 <div class="col-5">
                     <section class="overview-section">
                         <h2>Overview</h2>
@@ -52,8 +60,8 @@
                     <section class="role-section">
                         <h2>My role</h2>
                         <p>
-                            <strong>Product Designer</strong> | Dicas UX
-                            <br><br>
+                            <strong>Product Designer</strong>
+                            <br>
                             User Research, interaction, UI design, prototyping & testing                            
                         </p>
                     </section>
@@ -73,9 +81,9 @@
                         <h2>KPI's</h2>
                         <ul>
                             <li>User engagement rate</li>
-                            <li>Time spent per session</li>
-                            <li>Task completion efficiency</li>
-                            <li>User retention rate</li>
+                            <li>Average Session Duration</li>
+                            <li>Task Completion Efficiency</li>
+                            <li>User Retention Rate</li>
                         </ul>     
                     </section>
                 </div>
@@ -107,11 +115,11 @@
         </div> 
 
         <!-- Solution Section -->
-        <section class="solution-section">
+        <section class="solution-section" id="solution">
             <div class="container">
                 <div class="col-5">
                     <h2>Solution</h2>
-                    <p>I redesigned the platform with a clean, structured UI, improving navigation and reducing cognitive load. Features like organized moodboards, seamless collaboration tools, and intuitive trend discovery streamlined the user experience, making decision-making <strong>more efficient.</strong></p>
+                    <p>I redesigned the platform with a clean, structured UI, improving navigation and reducing cognitive load. Features like organized moodboards, collaboration tools and intuitive trend discovery streamlined the user experience, making decision-making <strong>more efficient.</strong></p>
                 </div>
                 <div class="solution-images">
                     <a href="img/start1.jpg" class="lightbox-trigger">
@@ -127,36 +135,35 @@
             </div>
         </section>
 
-<!-- Lightbox Modal -->
-<div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <div class="zoom-container">
-        <img class="lightbox-content" id="lightbox-img">
-        <div id="zoom-lens"></div>
-    </div>
-    <div class="lightbox-navigation">
-        <span class="prev">&#10094;</span>
-        <span class="next">&#10095;</span>
-    </div>
-</div>
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <div class="zoom-container">
+                <img class="lightbox-content" id="lightbox-img">
+                <div id="zoom-lens"></div>
+            </div>
+            <div class="lightbox-navigation">
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+            </div>
+        </div>
 
-
-        <section class="results-section">
+        <section class="results-section" id="results">
             <div class="container">
                 <div class="row">
                 <h2>Results</h2></div>
                 <div class="row">
                     <div class="col-3 result-card">
-                        <div class="result-number">85%</div>
-                        <p>users</p>
-                    </div>
-                    <div class="col-3 result-card">
-                        <div class="result-number">50%</div>
-                        <p>adoption rate</p>
-                    </div>
-                    <div class="col-3 result-card">
-                        <div class="result-number">30%</div>
+                        <div class="result-number">70%</div>
                         <p>user engagement</p>
+                    </div>
+                    <div class="col-3 result-card">
+                        <div class="result-number">85%</div>
+                        <p>task completion efficiency</p>
+                    </div>
+                    <div class="col-3 result-card">
+                        <div class="result-number">80%</div>
+                        <p>user retention rate</p>
                     </div>
                 </div>
             </div>
@@ -167,9 +174,9 @@
                 <div class="content">
                     <h2>Learnings</h2>
                     <ol>
-                        <li>Designing for fashion professionals requires a deep understanding of their workflow and pain points.</li>
-                        <li>Iterative design and usability testing are essential for creating a seamless user experience.</li>
-                        <li>Collaboration and trend discovery tools are key features that drive user engagement and adoption.</li>
+                        <li><strong>Context:</strong> Working in the fashion industry introduces unique challenges and nuances that require specialized attention, yet the core responsibilities of a product designer remain consistent.</li>
+                        <li><strong>User:</strong> When exploring new markets, it's crucial to talk directly to users to uncover their genuine pain points, only desk research may miss some insights.</li>
+                        <li><strong>Results:</strong> The iterative design process and continuous user validation MAY led to significant improvements in engagement and adoption metrics.</li>
                     </ol>
                     </div>
             </div>
@@ -189,7 +196,7 @@
             </div>
         </section>
 
-        <footer id="contact">
+        <footer id="footer">
             <h2>Contact</h2>
             <p>Feel free to contact me on <a href="https://www.linkedin.com/in/designernatan/" target="_blank">LinkedIn</a> or <a href="mailto:designernatan@gmail.com">designernatan@gmail.com</a></p>
           </footer>
