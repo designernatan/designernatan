@@ -10,6 +10,16 @@
     --margin: 64px;
     --gutter: 32px;
 
+    /* Dark Mode Colors */
+    --dark-text-color: #A0A8C0;
+    --dark-accent-color: #FF7F50;
+    --dark-accent-color-light: #FF997F;
+    --dark-accent-color-dark: #CC6633;
+    --dark-background-color: #1A1A2E;
+    --dark-white-color: #0F0F1A;
+    --dark-heading-color: #66CC99;
+    --dark-border-color: rgba(255, 127, 80, .2);
+
     /* Headings */
     --heading-90: 90px;
     --heading-67: 67px;
@@ -135,6 +145,18 @@ strong {
 .navbar a.active::after {
     transform: scaleX(1);
     transform-origin: bottom left;
+}
+
+body.dark-theme #navbar {
+    background: rgba(26, 26, 46, .9);
+}
+
+body.dark-theme .navbar a {
+    color: var(--dark-text-color);
+}
+
+body.dark-theme .navbar a::after {
+    background-color: var(--dark-accent-color);
 }
 
 /* Profile Section Styles */
