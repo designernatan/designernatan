@@ -159,6 +159,16 @@ body.dark-theme .navbar a::after {
     background-color: var(--dark-accent-color);
 }
 
+body.dark-theme .solution-section {
+
+    background: linear-gradient(
+        var(--white-color) 10%, 
+        var(--background-color) 10%, 
+        var(--background-color) 90%, 
+        var(--white-color) 90%
+    );
+}
+
 /* Profile Section Styles */
 .profile {
     display: flex;
@@ -249,6 +259,58 @@ body.dark-theme .navbar a::after {
     height: auto;
     object-fit: contain;
     border-radius: 8px;
+}
+
+.microphone-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.microphone-container .bi-mic-fill {
+    z-index: 1;
+}
+
+.wave {
+    position: absolute;
+    border: 2px solid var(--accent-color);
+    border-radius: 50%;
+    opacity: 0;
+    animation: radioWave 2s infinite ease-out;
+}
+
+.wave-1 {
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+}
+
+.wave-2 {
+    width: 180px;
+    height: 180px;
+    animation-delay: 0.5s;
+}
+
+.wave-3 {
+    width: 210px;
+    height: 210px;
+    animation-delay: 1s;
+}
+
+@keyframes radioWave {
+    0% {
+        transform: scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.main-profile-image {
+    border-radius: 50% !important;
 }
 
 .hero img {
@@ -415,6 +477,9 @@ body.dark-theme .navbar a::after {
     padding: var(--margin) 0;
     position: relative;
 }
+
+
+
 
 .solution-section .container {
     max-width: 1312px;
@@ -1160,13 +1225,7 @@ footer a:hover::after, footer a:focus::after {
 .sectionCourses-course-infos a:hover svg, .sectionCourses-course-infos a:focus svg {
     opacity: 1;
 }
-    width: 100%;
-    max-width: 518px;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
+  
 .card-inverted {
     display: flex;
     flex-direction: column;
