@@ -245,9 +245,10 @@ body.dark-theme .navbar a::after {
 }
 
 .profile-image img {
-    width: 318px;
-    height: 318px;
-    border-radius: 50%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
 .hero img {
@@ -1092,17 +1093,32 @@ footer a:hover::after, footer a:focus::after {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.sectionCourses-course-icon {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 16px;
+.course-icon {
+    width: 48px;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 24px;
+}
+
+.podcast-cover {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 24px;
+    background-size: cover;
 }
 
 .sectionCourses-course-name {
     font-size: var(--body-21);
     color: var(--text-color);
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     flex-grow: 1;
+}
+
+.sectionCourses-course-description {
+    font-size: var(--body-16);
+    color: var(--text-color);
+    margin-bottom: 16px;
+    opacity: 0.8;
 }
 
 .sectionCourses-course-infos {
@@ -1110,7 +1126,40 @@ footer a:hover::after, footer a:focus::after {
     color: var(--text-color);
 }
 
-.profile-image .slideshow-image {
+.sectionCourses-course-infos a {
+    font-size: var(--body-21);
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: bold;
+    position: relative; /* Adicionado para posicionamento absoluto do SVG */
+    transition: color 0.3s;
+    /* padding-right: 20px; Espaço para o ícone */
+}
+
+.sectionCourses-course-infos a svg {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    position: absolute; /* Ícone posicionado absolutamente */
+    right: -20px; /* Posiciona à direita do link */
+    top: 50%;
+    transform: translateY(-50%); /* Centraliza verticalmente */
+    vertical-align: middle;
+}
+
+.sectionCourses-course-infos a:hover svg, .sectionCourses-course-infos a:focus svg {
+    opacity: 1;
+}
+
+.sectionCourses-course-infos a svg {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+    margin-left: 5px; /* Adjust spacing */
+    vertical-align: middle;
+}
+
+.sectionCourses-course-infos a:hover svg, .sectionCourses-course-infos a:focus svg {
+    opacity: 1;
+}
     width: 100%;
     max-width: 518px;
     height: auto;

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <title>Natan Souza's Podcasts</title>
+        
+        <meta
+            name="description"
+            content="Podcasts com a participação de Natan Souza.">
+        <meta name="keywords" content="podcast, ux, design, tecnologia, natan souza">
+        <meta name="Author" content="Natan Souza, designernatan@gmail.com">
+        <meta name="theme-color" content="#393844">
+
+        <script src="js/ga.js"></script>
+        <script src="js/goldfish.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div id="navbar"></div>
+            <script>
+              fetch('navbar.html')
+                  .then(response => response.text())
+                  .then(data => {
+                      document.getElementById('navbar').innerHTML = data;
+                      const podcastsLink = document.querySelector('a[href="podcasts.html"]');
+                      if (podcastsLink) {
+                        const activeLinks = document.querySelectorAll('.active');
+                        activeLinks.forEach(link => link.classList.remove('active'));
+                        podcastsLink.classList.add('active');
+                      }
+                  });
+            </script>
+            <main class="main container">
+                <section class="profile">
+                    <div class="text-content">
+                        <h1>Participation in podcasts</h1>
+                        <p class="description">
+                            Here you'll find a list of podcasts and episodes I've participated in, sharing knowledge about UX, design, and technology.
+                        </p>
+                    </div>
+                    <div class="profile-image slideshow-container">
+                        <img src="img/turmas/IMG_0733.JPG" alt="Natan Souza" class="slideshow-image">
+                        <img src="img/turmas/IMG_2584.JPG" alt="Natan Souza" class="slideshow-image" style="display: none;">
+                        <img src="img/turmas/IMG_2871.JPG" alt="Natan Souza" class="slideshow-image" style="display: none;">
+                        <img src="img/turmas/IMG_9654.JPG" alt="Natan Souza" class="slideshow-image" style="display: none;">
+                        <img src="img/turmas/IMG_9755.JPG" alt="Natan Souza" class="slideshow-image" style="display: none;">
+                    </div>
+                </section>
+                <div class="grid-container">
+                    <section class="sectionCourses container-courses">
+
+                        <div class="sectionCourses-course">
+                            <img src="https://www.hipsters.tech/wp-content/uploads/2024/05/Hipsters-Ponto-Tech-412-1200x628-1.png" class="podcast-cover" alt="Capa do Podcast Hipsters Ponto Tech #412">
+                            <h3 class="sectionCourses-course-name">Hipsters Ponto Tech #412: Ferramentas para produtos</h3>
+                            <p class="sectionCourses-course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="sectionCourses-course-infos">
+                                <p class="sectionCourses-course-rating">Data: 2023</p>
+                                <p class="sectionCourses-course-students"><a href="https://www.hipsters.tech/ferramentas-para-produtos-hipsters-ponto-tech-412/" target="_blank">Listen episode <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.146L6.354 9.146a.5.5 0 1 0 .708.708L15 1.707V4.5a.5.5 0 0 0 1 0v-4a.5.5 0 0 0-.5-.5z"/>
+</svg></a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="sectionCourses-course">
+                            <img src="https://www.hipsters.tech/wp-content/uploads/2020/01/Hipsters-ponto-tech-185-1200x628-1.png" class="podcast-cover" alt="Capa do Podcast Hipsters #185">
+                            <h3 class="sectionCourses-course-name">Hipsters #185: UX Research</h3>
+                            <p class="sectionCourses-course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="sectionCourses-course-infos">
+                                <p class="sectionCourses-course-rating">Data: 2019</p>
+                                <p class="sectionCourses-course-students"><a href="https://www.hipsters.tech/ux-research-hipsters-185/" target="_blank">Listen episode <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.146L6.354 9.146a.5.5 0 1 0 .708.708L15 1.707V4.5a.5.5 0 0 0 1 0v-4a.5.5 0 0 0-.5-.5z"/>
+</svg></a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="sectionCourses-course">
+                            <img src="https://i0.wp.com/www.hipsters.tech/wp-content/uploads/2018/04/mitos-de-ux-93.jpg?w=750&ssl=1" class="podcast-cover" alt="Capa do Podcast Hipsters #93">
+                            <h3 class="sectionCourses-course-name">Hipsters #93: Mitos de UX</h3>
+                            <p class="sectionCourses-course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="sectionCourses-course-infos">
+                                <p class="sectionCourses-course-rating">Data: 2018</p>
+                                <p class="sectionCourses-course-students"><a href="https://www.hipsters.tech/mitos-de-ux-hipsters-93/" target="_blank">Listen episode <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.146L6.354 9.146a.5.5 0 1 0 .708.708L15 1.707V4.5a.5.5 0 0 0 1 0v-4a.5.5 0 0 0-.5-.5z"/>
+</svg></a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="sectionCourses-course">
+                            <img src="https://www.hipsters.tech/wp-content/uploads/2017/01/Hipsters-28.png" class="podcast-cover" alt="Capa do Podcast Hipsters #28">
+                            <h3 class="sectionCourses-course-name">Hipsters #28: Prototipação: erre cedo para acertar cedo</h3>
+                            <p class="sectionCourses-course-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <div class="sectionCourses-course-infos">
+                                <p class="sectionCourses-course-rating">Data: 2017</p>
+                                <p class="sectionCourses-course-students"><a href="https://www.hipsters.tech/prototipacao-erre-cedo-para-acertar-cedo-hipsters-28/" target="_blank">Listen episode <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"/>
+  <path fill-rule="evenodd" d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.146L6.354 9.146a.5.5 0 1 0 .708.708L15 1.707V4.5a.5.5 0 0 0 1 0v-4a.5.5 0 0 0-.5-.5z"/>
+</svg></a></p>
+                            </div>
+                        </div>
+                        
+                    </section>
+                </div>
+            </main>
+            <div id="footer"></div>
+            <script>
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('footer').innerHTML = data;
+                    });
+            </script>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script src="js/get-courses.js"></script>
+        <script>
+            let slideIndex = 0;
+            let slideTimeout;
+            const slideshowContainer = document.querySelector('.slideshow-container');
+
+            function showSlides() {
+                let i;
+                const slides = document.getElementsByClassName("slideshow-image");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1; }
+                slides[slideIndex - 1].style.display = "block";
+                slideTimeout = setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+
+            function pauseSlides() {
+                clearTimeout(slideTimeout);
+            }
+
+            function resumeSlides() {
+                slideTimeout = setTimeout(showSlides, 2000);
+            }
+
+            showSlides(); // Initial call
+
+            slideshowContainer.addEventListener('mouseenter', pauseSlides);
+            slideshowContainer.addEventListener('mouseleave', resumeSlides);
+        </script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>
