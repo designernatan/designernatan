@@ -209,6 +209,36 @@
             integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
             crossorigin="anonymous"></script>
         <script src="js/get-courses.js"></script>
+        <script>
+            let slideIndex = 0;
+            let slideTimeout;
+            const slideshowContainer = document.querySelector('.slideshow-container');
+
+            function showSlides() {
+                let i;
+                const slides = document.getElementsByClassName("slideshow-image");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                slideIndex++;
+                if (slideIndex > slides.length) { slideIndex = 1; }
+                slides[slideIndex - 1].style.display = "block";
+                slideTimeout = setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+
+            function pauseSlides() {
+                clearTimeout(slideTimeout);
+            }
+
+            function resumeSlides() {
+                slideTimeout = setTimeout(showSlides, 2000);
+            }
+
+            showSlides(); // Initial call
+
+            slideshowContainer.addEventListener('mouseenter', pauseSlides);
+            slideshowContainer.addEventListener('mouseleave', resumeSlides);
+        </script>
         <script src="js/theme.js"></script>
     </body>
 </html>
