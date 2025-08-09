@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/styles.css">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <title>Natan Souza's Talks</title>
+        
+        <meta
+            name="description"
+            content="Talks about UX, accessibility, User Experience.">
+        <meta name="keywords" content="talks, ux design, accessibility, front-end">
+        <meta name="Author" content="Natan Souza, designernatan@gmail.com">
+        <meta name="theme-color" content="#393844">
+
+        <script src="js/ga.js"></script>
+        <script src="js/goldfish.js"></script>
+
+    </head>
+    <body>
+        <div class="container">
+            <div id="navbar"></div>
+            <script>
+              fetch('navbar.html')
+                  .then(response => response.text())
+                  .then(data => {
+                      document.getElementById('navbar').innerHTML = data;
+                      const talksLink = document.querySelector('a[href="talks.html"]');
+                      if (talksLink) {
+                        const activeLinks = document.querySelectorAll('.active');
+                        activeLinks.forEach(link => link.classList.remove('active'));
+                        talksLink.classList.add('active');
+                      }
+                  });
+            </script>
+            <main class="main container">
+                <section class="profile">
+                    <div class="text-content">
+                        <h1>Sharing knowledge</h1>
+                        <p class="description">
+                            Here are some of my talks where I share my knowledge about UX, Design and Front-end.
+                        </p>
+                    </div>
+                </section>
+                <section class="sectionTalks">
+                    
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/awTWYNFnNrg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fCHd2_lAcQQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </section>
+            </main>
+            <div id="footer"></div>
+            <script>
+                fetch('footer.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById('footer').innerHTML = data;
+                    });
+            </script>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+        <script src="js/theme.js"></script>
+    </body>
+</html>

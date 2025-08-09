@@ -1232,3 +1232,26 @@ footer a:hover::after, footer a:focus::after {
     align-items: center;
     text-align: center;
 }
+
+/* Talks Section */
+.container-talks {
+    display: flex;
+    justify-content: space-around;
+    gap: 32px;
+    padding-bottom: 64px;
+}
+
+.video-container {
+    position: relative;
+    flex: 1 1 68%; /* allow grow and shrink, basis of 48% */
+    max-width: 48%; /* max width of 48% */
+    padding-top: 27%; /* 9 / 16 * 48% */
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
