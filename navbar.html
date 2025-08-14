@@ -1,6 +1,7 @@
 <div class="navbar-wrapper">
     <nav class="navbar">
-        <ul>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" tabindex="0" type="button">Menu</button>
+    <ul id="navbar-list" style="transition: max-height 0.3s ease; overflow: hidden;">
             <li><a href="/" id="home-link">Home</a></li>
             <li><a href="/#work">Work</a></li>
             <!-- <li><a href="#">UX Tips</a></li> -->
@@ -16,10 +17,44 @@
     document.addEventListener("DOMContentLoaded", function() {
         const homeLink = document.getElementById("home-link");
         const path = window.location.pathname;
-
-        // Verifica se está na home de diferentes formas
         if (homeLink && (path === "/" || path.endsWith("/index.html") || path.endsWith("/index"))) {
             homeLink.classList.add("active");
+        }
+
+        // Mobile menu toggle
+        const menuToggle = document.getElementById("menu-toggle");
+        const navbarList = document.getElementById("navbar-list");
+        function toggleMenu() {
+            navbarList.classList.toggle("open");
+            menuToggle.classList.toggle("open");
+            // Acessibilidade: foca no primeiro link ao abrir
+            if (navbarList.classList.contains("open")) {
+                navbarList.style.maxHeight = navbarList.scrollHeight + 'px';
+                const firstLink = navbarList.querySelector("a");
+                if (firstLink) firstLink.focus();
+            } else {
+                navbarList.style.maxHeight = '0px';
+            }
+        }
+        menuToggle.addEventListener("click", toggleMenu);
+        menuToggle.addEventListener("keypress", function(e) {
+            if (e.key === "Enter" || e.key === " ") toggleMenu();
+        });
+        // Fecha o menu ao clicar em um link (mobile UX)
+        navbarList.querySelectorAll("a").forEach(link => {
+            link.addEventListener("click", () => {
+                if (window.innerWidth <= 800) {
+                    navbarList.classList.remove("open");
+                    menuToggle.classList.remove("open");
+                    navbarList.style.maxHeight = '0px';
+                }
+            });
+        });
+        // Garante que o menu esteja fechado por padrão no mobile
+        if (window.innerWidth <= 800) {
+            navbarList.classList.remove("open");
+            menuToggle.classList.remove("open");
+            navbarList.style.maxHeight = '0px';
         }
     });
 </script>
