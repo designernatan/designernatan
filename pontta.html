@@ -10,6 +10,7 @@
     <title>Pontta Gestor - Natan Souza</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/lightbox.js" defer></script>
 </head>
 <body id="pontta-page">
     <div class="container">
@@ -132,6 +133,19 @@
                 </div>
             </div>
         </section>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <div class="zoom-container">
+                <img class="lightbox-content" id="lightbox-img">
+                <div id="zoom-lens"></div>
+            </div>
+            <div class="lightbox-navigation">
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+            </div>
+        </div>
 
         <section class="results-section" id="results">
             <div class="container">

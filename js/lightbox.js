@@ -14,10 +14,21 @@ document.addEventListener("DOMContentLoaded", function () {
         img.parentElement.addEventListener("click", function (event) {
             event.preventDefault();
             currentIndex = index;
-            const enlargedSrc = img.src.replace('.jpg', '-big.jpg');
-            openLightbox(enlargedSrc);
+            const originalSrc = img.src;
+            const bigSrc = originalSrc.replace('.jpg', '-big.jpg');
+            // Tenta carregar a versão -big, se não existir usa a original
+            testImage(bigSrc, function(exists) {
+                openLightbox(exists ? bigSrc : originalSrc);
+            });
         });
     });
+
+    function testImage(url, callback) {
+        const img = new window.Image();
+        img.onload = function() { callback(true); };
+        img.onerror = function() { callback(false); };
+        img.src = url;
+    }
     function openLightbox(src) {
         lightboxImg.src = src;
         lightbox.classList.add("active");
@@ -42,16 +53,23 @@ document.addEventListener("DOMContentLoaded", function () {
         lightbox.classList.remove("active");
     }
 
+
     function showPrevImage() {
         currentIndex = (currentIndex - 1 + images.length) % images.length;
-        const prevSrc = images[currentIndex].src.replace('.jpg', '-big.jpg');
-        openLightbox(prevSrc);
+        const originalSrc = images[currentIndex].src;
+        const bigSrc = originalSrc.replace('.jpg', '-big.jpg');
+        testImage(bigSrc, function(exists) {
+            openLightbox(exists ? bigSrc : originalSrc);
+        });
     }
 
     function showNextImage() {
         currentIndex = (currentIndex + 1) % images.length;
-        const nextSrc = images[currentIndex].src.replace('.jpg', '-big.jpg');
-        openLightbox(nextSrc);
+        const originalSrc = images[currentIndex].src;
+        const bigSrc = originalSrc.replace('.jpg', '-big.jpg');
+        testImage(bigSrc, function(exists) {
+            openLightbox(exists ? bigSrc : originalSrc);
+        });
     }
 
     closeBtn.addEventListener("click", closeLightbox);
