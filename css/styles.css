@@ -1,3 +1,80 @@
+/* OK Roger Hero Stack Effect - v2 */
+.okroger-stack {
+    position: relative;
+    width: 900px;
+    height: 420px;
+    margin: 0 auto;
+    display: block;
+}
+.okroger-base {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 900px;
+    height: 420px;
+    z-index: 1;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(60,60,100,0.10), 0 1.5px 8px 0 rgba(60,60,100,0.06);
+}
+.okroger-float {
+    position: absolute;
+    border-radius: 18px;
+    box-shadow: 0 12px 32px 0 rgba(60,60,100,0.18), 0 2px 12px 0 rgba(60,60,100,0.12);
+    will-change: transform;
+    transition: box-shadow 0.4s;
+}
+.okroger-float2 {
+    width: 340px;
+    height: 110px;
+    left: 320px;
+    top: 30px;
+    z-index: 5;
+    transform: rotate(-6deg);
+    animation: okroger-levitate2 3.2s ease-in-out infinite alternate;
+}
+.okroger-float3 {
+    width: 260px;
+    height: 80px;
+    left: 120px;
+    top: 110px;
+    z-index: 6;
+    transform: rotate(-2deg);
+    animation: okroger-levitate3 3.7s ease-in-out infinite alternate;
+}
+.okroger-float4 {
+    width: 400px;
+    height: 90px;
+    left: 420px;
+    top: 120px;
+    z-index: 7;
+    transform: rotate(7deg);
+    animation: okroger-levitate4 3.9s ease-in-out infinite alternate;
+}
+.okroger-float5 {
+    width: 320px;
+    height: 100px;
+    left: 380px;
+    top: 220px;
+    z-index: 8;
+    transform: rotate(-3deg);
+    animation: okroger-levitate5 4.1s ease-in-out infinite alternate;
+}
+@keyframes okroger-levitate2 {
+    0% { transform: translateY(0) rotate(-6deg); }
+    100% { transform: translateY(-12px) rotate(-6deg) scale(1.03); }
+}
+@keyframes okroger-levitate3 {
+    0% { transform: translateY(0) rotate(-2deg); }
+    100% { transform: translateY(-10px) rotate(-2deg) scale(1.04); }
+}
+@keyframes okroger-levitate4 {
+    0% { transform: translateY(0) rotate(7deg); }
+    100% { transform: translateY(-14px) rotate(7deg) scale(1.03); }
+}
+@keyframes okroger-levitate5 {
+    0% { transform: translateY(0) rotate(-3deg); }
+    100% { transform: translateY(-8px) rotate(-3deg) scale(1.04); }
+}
 :root {
     --text-color: #525A7A;
     --accent-color: #E4572E;
@@ -101,12 +178,14 @@ strong {
 
 .navbar {
     width: 100%;
+    max-width: 1312px;
     position: sticky;
     top: 0;
     height: 72px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 0 16px;
 }
 
 .navbar ul {
@@ -122,6 +201,17 @@ strong {
     color: var(--text-color);
     font-size: var(--body-16);
     transition: color 0.3s;
+}
+
+.navbar a.navbar-brand {
+    font-weight: bold;
+    font-size: var(--body-21);
+    padding-left: 1em;
+    color: var(--heading-color) !important;
+}
+
+.navbar a.navbar-brand::after {
+    display: none;
 }
 
 .navbar a::after {
@@ -328,7 +418,7 @@ body.dark-theme .solution-section {
 }
 
 .main-profile-image {
-    border-radius: 50% !important;
+    border-radius: 1em;
 }
 
 .hero img {
@@ -422,7 +512,7 @@ body.dark-theme .solution-section {
 
 .case-study {
     background-color: var(--background-color);
-    padding: 64px 44px 0 44px;
+    padding: 64px 44px 64px 44px;
     border-radius: 8px;
     border: 1px solid var(--border-color);
     transition: box-shadow 0.3s;
@@ -434,6 +524,14 @@ body.dark-theme .solution-section {
 
 .case-study h2 {
     font-size: var(--heading-38);
+    color: var(--text-color);
+    margin-bottom: .25em;
+    
+    margin-top: var(--gutter);
+}
+
+.case-study h3 {
+    font-size: var(--heading-28);
     color: var(--text-color);
     margin-bottom: 1em;
 }
@@ -474,12 +572,47 @@ body.dark-theme .solution-section {
 .case-study img {
     width: 100%;
     border-radius: 8px;
-    margin-top: var(--gutter);
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.case-study .case-study-link-text {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: bold;
+    align-self: flex-start;
+}
+
+.case-study-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex; /* Use flex to make the link fill the container */
+    height: 100%;
+}
+
+.case-study-link .case-study {
+    width: 100%;
+    transition: .3s;
+}
+
+.case-study-link:hover .case-study {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-color: var(--accent-color);
 }
 
 @media (max-width: 1312px) {
     .case-study-section {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .case-study-section {
+        grid-template-columns: 1fr;
+    }
+    .case-study {
+        padding: 32px 22px 0 22px;
     }
 }
 
@@ -1272,4 +1405,22 @@ footer a:hover::after, footer a:focus::after {
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: var(--gutter);
+}
+
+.section-title h2 {
+    font-size: var(--heading-38);
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.section-title p {
+    font-size: var(--body-21);
+    color: var(--text-color);
+    max-width: 600px;
+    margin: 0 auto;
 }
