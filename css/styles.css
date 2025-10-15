@@ -179,8 +179,7 @@ strong {
 .navbar {
     width: 100%;
     max-width: 1312px;
-    position: sticky;
-    top: 0;
+    margin: 0 auto;
     height: 72px;
     display: flex;
     align-items: center;
@@ -206,7 +205,6 @@ strong {
 .navbar a.navbar-brand {
     font-weight: bold;
     font-size: var(--body-21);
-    padding-left: 1em;
     color: var(--heading-color) !important;
 }
 
@@ -262,6 +260,7 @@ body.dark-theme .navbar a::after {
     .navbar li { width:100%; }
     .navbar a { display:block; width:100%; padding:18px 0 18px 18px; font-size:18px; border-bottom:1px solid #eee; color:var(--text-color); background:none; }
     .navbar a:last-child { border-bottom:none; }
+    /* On mobile, hide the decorative underline effect for navbar links to simplify the UI */
     .navbar a::after { display:none; }
     #navbar-list { max-height:0; overflow:hidden; transition:max-height .3s ease; }
     #navbar-list.open { max-height:500px; }
