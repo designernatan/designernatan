@@ -14,22 +14,7 @@
 </head>
 <body>
     <div class="container">
-        <div id="navbar"></div> <!-- Placeholder for the navigation -->
-        <script>
-          fetch('navbar.html')
-              .then(response => response.text())
-              .then(data => {
-                  document.getElementById('navbar').innerHTML = data;
-      
-                  // Agora que a navbar foi carregada, podemos executar o script corretamente
-                  const homeLink = document.getElementById("home-link");
-                  const path = window.location.pathname;
-      
-                  if (homeLink && (path === "/" || path.endsWith("/index.html") || path.endsWith("/index"))) {
-                      homeLink.classList.add("active");
-                  }
-              });
-      </script>
+    <div id="navbar"></div> <!-- Placeholder for the navigation -->
       
         
         <section class="profile">
@@ -129,7 +114,8 @@
                     document.getElementById('footer').innerHTML = data;
                 });
         </script>
-        <script src="js/theme.js"></script>
+    <script src="js/navbar.js"></script>
+    <script src="js/theme.js"></script>
     </div>
 </body>
 </html>

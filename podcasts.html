@@ -26,20 +26,7 @@
     </head>
     <body>
         <div class="container">
-            <div id="navbar"></div>
-            <script>
-              fetch('navbar.html')
-                  .then(response => response.text())
-                  .then(data => {
-                      document.getElementById('navbar').innerHTML = data;
-                      const podcastsLink = document.querySelector('a[href="podcasts.html"]');
-                      if (podcastsLink) {
-                        const activeLinks = document.querySelectorAll('.active');
-                        activeLinks.forEach(link => link.classList.remove('active'));
-                        podcastsLink.classList.add('active');
-                      }
-                  });
-            </script>
+                        <div id="navbar"></div>
             <main class="main container">
                 <section class="profile">
                     <div class="text-content">
@@ -156,6 +143,7 @@
             slideshowContainer.addEventListener('mouseenter', pauseSlides);
             slideshowContainer.addEventListener('mouseleave', resumeSlides);
         </script>
+        <script src="js/navbar.js"></script>
         <script src="js/theme.js"></script>
     </body>
 </html>

@@ -15,13 +15,6 @@
 <body id="okroger-page">
     <div class="container">
         <div id="navbar"></div>
-        <script>
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                });
-        </script>
       
         <section class="profile hero grid-container">
             <div class="text-content">
@@ -177,6 +170,7 @@
                 document.getElementById('footer').innerHTML = data;
             });
     </script>
+    <script src="js/navbar.js"></script>
     <script src="js/theme.js"></script>
 </body>
 </html>

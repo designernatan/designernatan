@@ -15,13 +15,6 @@
 <body id="b2b-dashboard-page">
     <div class="container">
         <div id="navbar"></div>
-        <script>
-            fetch('navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                });
-        </script>
       
         <section class="profile hero grid-container">
             <div class="text-content">
@@ -46,7 +39,7 @@
                     <section class="overview-section">
                         <h2>Overview</h2>
                         <p>
-                            The Analytical B2B Dashboard was developed for managers in corporate learning environments. It provides real-time insights into employee engagement, course completion rates, and licensing status, allowing companies to make data-driven decisions.
+                            The Analytical B2B Dashboard was developed for managers in corporate learning environments. It provides <strong>real-time insights into employee engagement</strong>, course completion rates, and licensing status, allowing companies to make data-driven decisions.
                         </p>
                     </section>
                 </div>
@@ -66,7 +59,7 @@
                     <section class="problem-section">
                         <h2>Problem</h2>
                         <p>
-                            Before the redesign, managers had limited visibility into employee learning activities. The previous interface was a simple chart with a table below, lacking actionable insights. The goal was to create a structured, insightful dashboard that could generate reports and facilitate data-driven decision-making.
+                            Before the redesign, managers had <strong>limited visibility into employee learning activities</strong>. The previous interface was a simple chart with a table below, lacking actionable insights. The goal was to create a structured, insightful dashboard that could generate reports and facilitate data-driven decision-making.
                         </p>
                     </section>
                 </div>
@@ -97,10 +90,10 @@
                     <div class="col-3" style="margin: 0 auto;">
                         <div class="content">
                             <p>
-                                Using an adaptive Double Diamond approach, I conducted user interviews to understand the main pain points. The research revealed issues with data visibility, lack of structure, and difficulty generating meaningful reports.
+                                Using an <strong>adaptive Double Diamond approach</strong>, I conducted <em>user interviews</em> to understand the main pain points. The research revealed issues with data visibility, lack of structure, and difficulty generating meaningful reports.
                             </p>
                             <p>
-                                Based on these insights, the dashboard was redesigned with clear visual hierarchies, interactive elements, and better contrast. Iterative usability tests ensured an optimal user experience.
+                                Based on these insights, the dashboard was redesigned with <strong>clear visual hierarchies</strong>, interactive elements, and better contrast. Iterative usability tests ensured an optimal user experience.
                             </p>
                         </div>
                     </div>
@@ -112,7 +105,7 @@
             <div class="container">
                 <div class="col-5">
                     <h2>Solution</h2>
-                    <p>The final dashboard provided a structured UI with actionable insights, allowing managers to monitor employee engagement and licensing with ease. Features like an intuitive walkthrough, improved chart contrast, and hover interactions made navigation smoother and data more digestible.</p>
+                    <p>The final dashboard provided a <strong>structured UI with actionable insights</strong>, allowing managers to monitor employee engagement and licensing with ease. Features like an intuitive walkthrough, improved chart contrast, and hover interactions made navigation smoother and data more digestible.</p>
                 </div>
                 <div class="solution-images">
                     <a href="img/dash/dash1-big.jpg" class="lightbox-trigger">
@@ -170,6 +163,7 @@
                 document.getElementById('footer').innerHTML = data;
             });
     </script>
+    <script src="js/navbar.js"></script>
     <script src="js/theme.js"></script>
 </body>
 </html>
