@@ -160,14 +160,17 @@ strong {
 
 /* Navbar Styles */
 
+.navbar-wrapper { display: none; } /* removed redundant wrapper */
 #navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-    
-    background-color: var(--background-color);
+    width: 100%;      /* full viewport width */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center; /* center inner nav */
     backdrop-filter: blur(10px);
-    
     background: rgba(253, 250, 242, .9);
 }
 
@@ -250,21 +253,33 @@ body.dark-theme .navbar a::after {
 /* Base: esconde botão Menu no desktop */
 .navbar .menu-toggle { display: none; }
 
+
+
 /* Menu colapsável mobile */
 @media (max-width: 800px) {
-    .navbar { height:auto; flex-wrap:wrap; flex-direction:row; align-items:center; justify-content:space-between; padding:12px 16px; position:relative; gap:12px; }
-    .navbar a.navbar-brand { flex:1 1 auto; }
+    .navbar { height:auto; flex-wrap:nowrap; flex-direction:row; align-items:center; justify-content:space-between; padding:12px 16px; position:relative; gap:12px; }
     .navbar .menu-toggle { display:block; background:var(--accent-color); color:#fff; border:none; border-radius:6px; font-size:18px; padding:10px 24px; margin:0; cursor:pointer; z-index:1002; transition:background .2s; }
     .navbar .menu-toggle.open, .navbar .menu-toggle:active, .navbar .menu-toggle:focus { background:var(--accent-color-dark); outline:none; }
     .navbar ul { flex-direction:column; gap:0; width:100%; background-color:var(--white-color); position:absolute; top:100%; left:0; box-shadow:0 2px 12px rgba(0,0,0,.12); border-radius:0 0 12px 12px; padding:0; display:none; z-index:1001; }
     .navbar ul.open { display:flex; }
     .navbar li { width:100%; }
-    .navbar a { display:block; width:100%; padding:18px 0 18px 18px; font-size:18px; border-bottom:1px solid #eee; color:var(--text-color); background:none; }
+    .navbar a { display:block; width:100%; padding:18px 0 18px 18px; font-size:18px; color:var(--text-color); background:none; }
     .navbar a:last-child { border-bottom:none; }
     /* On mobile, hide the decorative underline effect for navbar links to simplify the UI */
     .navbar a::after { display:none; }
     #navbar-list { max-height:0; overflow:hidden; transition:max-height .3s ease; }
     #navbar-list.open { max-height:500px; }
+
+    .navbar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: transparent;
+        width: 100%; /* Full width for extreme alignment */
+        padding: 0 16px; /* Internal space on left and right */
+    }
+
+    
 }
 
 body.dark-theme .solution-section {
