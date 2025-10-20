@@ -627,7 +627,7 @@ body.dark-theme .solution-section {
         grid-template-columns: 1fr;
     }
     .case-study {
-        padding: 32px 22px 0 22px;
+        padding: 32px 22px;
     }
 }
 
