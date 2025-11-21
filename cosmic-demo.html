@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosmic Effects Demo - Escolha seu Background</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/cosmic-effects.css">
+</head>
+<body>
+    
+    <!-- Header com controles -->
+    <header class="demo-header">
+        <div class="header-content">
+            <h1>Cosmic Background Effects</h1>
+            <p>Teste as 4 opções e escolha a melhor para seu projeto</p>
+        </div>
+        
+        <nav class="effect-controls">
+            <button class="control-btn active" data-effect="galaxy">
+                <span class="btn-icon">🌀</span>
+                Galaxy Spiral
+            </button>
+            <button class="control-btn" data-effect="cosmic-beam">
+                <span class="btn-icon">⚡</span>
+                Cosmic Beam
+            </button>
+            <button class="control-btn" data-effect="stardust">
+                <span class="btn-icon">✨</span>
+                Stardust Canvas
+            </button>
+            <button class="control-btn" data-effect="vortex">
+                <span class="btn-icon">🌊</span>
+                Energy Vortex
+            </button>
+        </nav>
+    </header>
+
+    <!-- Container principal com efeito ativo -->
+    <main class="demo-container">
+        
+        <!-- Opção 1: Galaxy Spiral -->
+        <div class="effect-background active" id="effect-galaxy">
+            <div class="galaxy-container">
+                <div class="galaxy-core"></div>
+                <div class="galaxy-spiral spiral-1"></div>
+                <div class="galaxy-spiral spiral-2"></div>
+                <div class="galaxy-spiral spiral-3"></div>
+                <div class="galaxy-dust"></div>
+                <div class="stars-field"></div>
+            </div>
+        </div>
+
+        <!-- Opção 2: Cosmic Beam -->
+        <div class="effect-background" id="effect-cosmic-beam">
+            <canvas id="beam-canvas"></canvas>
+        </div>
+
+        <!-- Opção 3: Stardust Canvas -->
+        <div class="effect-background" id="effect-stardust">
+            <canvas id="stardust-canvas"></canvas>
+        </div>
+
+        <!-- Opção 4: Energy Vortex -->
+        <div class="effect-background" id="effect-vortex">
+            <svg class="vortex-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <radialGradient id="vortex-core" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.8" />
+                        <stop offset="20%" style="stop-color:#00D9FF;stop-opacity:0.6" />
+                        <stop offset="50%" style="stop-color:#1E40AF;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:0" />
+                    </radialGradient>
+                    <linearGradient id="spiral-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#00D9FF;stop-opacity:0.4" />
+                        <stop offset="50%" style="stop-color:#FFA500;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:0.2" />
+                    </linearGradient>
+                </defs>
+                
+                <rect width="1920" height="1080" fill="#0a0f1e"/>
+                
+                <!-- Vortex rings -->
+                <g class="vortex-rings">
+                    <ellipse cx="960" cy="540" rx="200" ry="80" fill="none" stroke="url(#spiral-gradient)" stroke-width="2" opacity="0.6">
+                        <animateTransform attributeName="transform" type="rotate" from="0 960 540" to="360 960 540" dur="20s" repeatCount="indefinite"/>
+                        <animate attributeName="rx" values="200;250;200" dur="8s" repeatCount="indefinite"/>
+                    </ellipse>
+                    <ellipse cx="960" cy="540" rx="350" ry="140" fill="none" stroke="url(#spiral-gradient)" stroke-width="2" opacity="0.4">
+                        <animateTransform attributeName="transform" type="rotate" from="0 960 540" to="360 960 540" dur="25s" repeatCount="indefinite"/>
+                        <animate attributeName="rx" values="350;400;350" dur="10s" repeatCount="indefinite"/>
+                    </ellipse>
+                    <ellipse cx="960" cy="540" rx="500" ry="200" fill="none" stroke="url(#spiral-gradient)" stroke-width="1.5" opacity="0.3">
+                        <animateTransform attributeName="transform" type="rotate" from="0 960 540" to="360 960 540" dur="30s" repeatCount="indefinite"/>
+                    </ellipse>
+                </g>
+                
+                <!-- Core beam -->
+                <rect x="940" y="0" width="40" height="1080" fill="url(#vortex-core)" opacity="0.8">
+                    <animate attributeName="opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+                </rect>
+                
+                <!-- Central glow -->
+                <circle cx="960" cy="540" r="150" fill="url(#vortex-core)">
+                    <animate attributeName="r" values="150;180;150" dur="3s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+
+        <!-- Conteúdo de demonstração -->
+        <div class="demo-content">
+            <div class="content-card">
+                <h2>Preview Mode</h2>
+                <p>Este é um exemplo de como o conteúdo aparecerá sobre o background escolhido.</p>
+                <div class="demo-buttons">
+                    <button class="demo-btn primary">Primary Action</button>
+                    <button class="demo-btn secondary">Secondary</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Cards de comparação -->
+    <section class="comparison-section">
+        <h2 class="section-title">Comparação Técnica</h2>
+        
+        <div class="comparison-grid">
+            
+            <!-- Card 1: Galaxy Spiral -->
+            <article class="comparison-card" data-effect="galaxy">
+                <div class="card-header">
+                    <h3>Galaxy Spiral</h3>
+                    <span class="performance-badge high">Alta Performance</span>
+                </div>
+                <div class="card-body">
+                    <div class="pros">
+                        <h4>Vantagens</h4>
+                        <ul>
+                            <li>✓ Visual próximo à referência</li>
+                            <li>✓ Espiral galáctica realista</li>
+                            <li>✓ Apenas CSS e camadas</li>
+                            <li>✓ Animações suaves e orgânicas</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>Limitações</h4>
+                        <ul>
+                            <li>• Múltiplas camadas DOM</li>
+                            <li>• Complexidade visual moderada</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="tech-tags">
+                        <span class="tag">CSS</span>
+                        <span class="tag">Gradients</span>
+                        <span class="tag">Blend Modes</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2: Cosmic Beam -->
+            <article class="comparison-card" data-effect="cosmic-beam">
+                <div class="card-header">
+                    <h3>Cosmic Beam</h3>
+                    <span class="performance-badge medium">Performance Média</span>
+                </div>
+                <div class="card-body">
+                    <div class="pros">
+                        <h4>Vantagens</h4>
+                        <ul>
+                            <li>✓ Raio vertical central realista</li>
+                            <li>✓ Partículas flutuantes dinâmicas</li>
+                            <li>✓ Efeito de energia pulsante</li>
+                            <li>✓ Cores fiéis à referência</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>Limitações</h4>
+                        <ul>
+                            <li>• Usa Canvas (JavaScript)</li>
+                            <li>• Impacto médio em performance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="tech-tags">
+                        <span class="tag">Canvas</span>
+                        <span class="tag">Particles</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3: Stardust Canvas -->
+            <article class="comparison-card" data-effect="stardust">
+                <div class="card-header">
+                    <h3>Stardust Canvas</h3>
+                    <span class="performance-badge medium">Performance Média</span>
+                </div>
+                <div class="card-body">
+                    <div class="pros">
+                        <h4>Vantagens</h4>
+                        <ul>
+                            <li>✓ Campo estelar dinâmico</li>
+                            <li>✓ Partículas com brilho variável</li>
+                            <li>✓ Espiral central rotativa</li>
+                            <li>✓ Máxima proximidade visual</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>Limitações</h4>
+                        <ul>
+                            <li>• Requer JavaScript ativo</li>
+                            <li>• Pode consumir GPU em mobile</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="tech-tags">
+                        <span class="tag">Canvas</span>
+                        <span class="tag">Animation</span>
+                        <span class="tag">Glow Effects</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4: Energy Vortex -->
+            <article class="comparison-card" data-effect="vortex">
+                <div class="card-header">
+                    <h3>Energy Vortex</h3>
+                    <span class="performance-badge high">Alta Performance</span>
+                </div>
+                <div class="card-body">
+                    <div class="pros">
+                        <h4>Vantagens</h4>
+                        <ul>
+                            <li>✓ Espiral em movimento hipnótico</li>
+                            <li>✓ Raio central brilhante</li>
+                            <li>✓ SVG escalável e leve</li>
+                            <li>✓ Efeito vórtex realista</li>
+                        </ul>
+                    </div>
+                    <div class="cons">
+                        <h4>Limitações</h4>
+                        <ul>
+                            <li>• SVG inline aumenta HTML</li>
+                            <li>• Menos controle dinâmico</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="tech-tags">
+                        <span class="tag">SVG</span>
+                        <span class="tag">SMIL</span>
+                        <span class="tag">Gradients</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- Recomendação -->
+    <section class="recommendation-section">
+        <div class="recommendation-card">
+            <h2>💡 Recomendação</h2>
+            <p><strong>Para máxima fidelidade à imagem de referência:</strong></p>
+            <p>Recomendamos <strong>Stardust Canvas</strong> - recria perfeitamente o campo estelar com espiral galáctica, raios de luz e partículas brilhantes.</p>
+            <p><strong>Para melhor equilíbrio visual/performance:</strong> Galaxy Spiral ou Energy Vortex (CSS/SVG puro com visual próximo).</p>
+            <p><strong>Para efeito dramático de energia:</strong> Cosmic Beam (raio vertical central com partículas dinâmicas).</p>
+        </div>
+    </section>
+
+    <script src="js/cosmic-canvas.js"></script>
+    <script>
+        // Sistema de troca de efeitos
+        const controlButtons = document.querySelectorAll('.control-btn');
+        const effectBackgrounds = document.querySelectorAll('.effect-background');
+        const comparisonCards = document.querySelectorAll('.comparison-card');
+        
+        controlButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const effectName = button.dataset.effect;
+                
+                // Atualiza botões
+                controlButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Atualiza backgrounds
+                effectBackgrounds.forEach(bg => bg.classList.remove('active'));
+                document.getElementById(`effect-${effectName}`).classList.add('active');
+                
+                // Destaca card correspondente
+                comparisonCards.forEach(card => card.classList.remove('highlighted'));
+                document.querySelector(`.comparison-card[data-effect="${effectName}"]`).classList.add('highlighted');
+                
+                // Inicializa canvas effects se necessário
+                if (effectName === 'cosmic-beam') {
+                    initCosmicBeam();
+                } else if (effectName === 'stardust') {
+                    initStardust();
+                }
+            });
+        });
+        
+        // Inicializa efeito padrão (radial)
+        document.addEventListener('DOMContentLoaded', () => {
+            // Não faz nada, já está ativo por padrão
+        });
+    </script>
+
+</body>
+</html>
