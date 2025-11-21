@@ -6,15 +6,47 @@
     <meta name="description" content="Case study of OK Roger - B2B Travel Management Platform (Study Case).">
     <meta name="keywords" content="UI, UX, dashboard, travel management, case study, product design">
     <meta name="author" content="Natan Souza, designernatan@gmail.com">
-    <meta name="theme-color" content="#FDFAF2">
+    <meta name="theme-color" content="#0a0a0a">
     <title>OK Roger – Case Study | Natan Souza</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles2.css">
+    <link rel="stylesheet" href="css/cosmic-effects.css">
+    <script src="js/premium-effects.js" defer></script>
     <script src="js/lightbox.js" defer></script>
 </head>
-<body id="okroger-page">
+<body class="dark-premium">
+    <div class="galaxy-background">
+        <div class="stars"></div>
+        <div class="twinkling"></div>
+    </div>
+
+    <nav id="premium-nav" class="premium-nav">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <span class="logo-text">Natan Souza</span>
+            </a>
+            <div class="nav-links" id="nav-menu">
+                <a href="index.html#work" class="nav-link">Work</a>
+                <a href="courses.html" class="nav-link">Courses</a>
+                <a href="podcasts.html" class="nav-link">Podcasts</a>
+                <a href="talks.html" class="nav-link">Talks</a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </div>
+    </nav>
+
     <div class="container">
-        <div id="navbar"></div>
       
         <section class="profile hero grid-container">
             <div class="text-content">
@@ -161,16 +193,24 @@
             </div>
         </section>
     </div>
-    <div id="footer"></div> <!-- Placeholder for the footer -->
-
-      <script>
-        fetch('footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer').innerHTML = data;
-            });
-    </script>
-    <script src="js/navbar.js"></script>
-    <script src="js/theme.js"></script>
+    <footer class="premium-footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="footer-logo">Natan Souza</span>
+                    <p class="footer-tagline">Product Design Leader</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html#work">Work</a>
+                    <a href="courses.html">Courses</a>
+                    <a href="podcasts.html">Podcasts</a>
+                    <a href="talks.html">Talks</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Natan Souza. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
