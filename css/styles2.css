@@ -26,8 +26,8 @@
     --galaxy-bg-3: #050a12;
     
     /* Accent Colors */
-    --color-accent-primary: #00D9FF;
-    --color-accent-secondary: #7C3AED;
+    --color-accent-primary: #00C6FF;
+    --color-accent-secondary: #0072FF;
     --color-accent-success: #10B981;
     
     /* Typography */
@@ -37,11 +37,15 @@
     
     /* Borders & Strokes */
     --color-border: rgba(255, 255, 255, 0.08);
-    --color-border-hover: rgba(0, 217, 255, 0.3);
+    --color-border-hover: rgba(0, 198, 255, 0.3);
     
     /* Gradients */
-    --gradient-accent: linear-gradient(135deg, #00D9FF 0%, #7C3AED 100%);
+    --gradient-accent: linear-gradient(270deg, #00C6FF 0%, #0072FF 52.88%, #000C40 100%);
     --gradient-overlay: linear-gradient(180deg, rgba(10, 10, 10, 0.4) 0%, rgba(10, 10, 10, 0.85) 100%);
+    
+    /* Saved Gradients (Unused) */
+    --gradient-rainbow-spectrum: linear-gradient(90deg, #025FD6 20%, #745BCC 40%, #EB5AC4 60%, #FE7FA7 80%, #FBB139 100%);
+    --gradient-warm-sunset: linear-gradient(270deg, #FDAE03 0%, #E5057E 52.88%, #930183 100%);
     
     /* Spacing System */
     --space-xs: 0.5rem;
@@ -86,8 +90,8 @@
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
     --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
     --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
-    --shadow-glow: 0 0 32px rgba(0, 217, 255, 0.3);
-    --shadow-glow-hover: 0 0 48px rgba(0, 217, 255, 0.5);
+    --shadow-glow: 0 0 32px rgba(0, 198, 255, 0.3);
+    --shadow-glow-hover: 0 0 48px rgba(0, 198, 255, 0.5);
 }
 
 /* Light Mode - Premium "Daylight" Theme */
@@ -105,7 +109,7 @@ body.light-mode {
     
     /* Borders - Subtle & Refined */
     --color-border: rgba(148, 163, 184, 0.2);
-    --color-border-hover: rgba(0, 217, 255, 0.8);
+    --color-border-hover: rgba(0, 198, 255, 0.8);
     
     /* Gradients & Overlays */
     --gradient-overlay: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.95) 100%);
@@ -114,7 +118,7 @@ body.light-mode {
     --shadow-sm: 0 2px 8px rgba(148, 163, 184, 0.15);
     --shadow-md: 0 8px 24px rgba(148, 163, 184, 0.2);
     --shadow-lg: 0 16px 48px rgba(148, 163, 184, 0.25);
-    --shadow-glow: 0 0 20px rgba(0, 217, 255, 0.2);
+    --shadow-glow: 0 0 20px rgba(0, 198, 255, 0.2);
     
     /* Galaxy Background - "Aurora Day" */
     --galaxy-bg-1: #F0F9FF; /* Sky 50 */
@@ -252,9 +256,9 @@ img {
     height: 120%;
     background: linear-gradient(to bottom,
         rgba(255, 255, 255, 1) 0%,
-        rgba(0, 217, 255, 0.9) 20%,
-        rgba(0, 217, 255, 0.6) 40%,
-        rgba(30, 64, 175, 0.3) 60%,
+        rgba(0, 198, 255, 0.9) 20%,
+        rgba(0, 114, 255, 0.6) 40%,
+        rgba(0, 12, 64, 0.3) 60%,
         transparent 100%
     );
     filter: blur(35px);
@@ -287,9 +291,9 @@ img {
     width: 800px;
     height: 300px;
     background: radial-gradient(ellipse at center,
-        rgba(0, 217, 255, 0.5) 0%,
-        rgba(30, 64, 175, 0.4) 30%,
-        rgba(255, 165, 0, 0.25) 50%,
+        rgba(0, 198, 255, 0.5) 0%,
+        rgba(0, 114, 255, 0.4) 30%,
+        rgba(0, 12, 64, 0.25) 50%,
         transparent 70%
     );
     transform: translate(-50%, -50%) rotate(-30deg);
@@ -301,9 +305,9 @@ img {
     width: 900px;
     height: 350px;
     background: radial-gradient(ellipse at center,
-        rgba(255, 165, 0, 0.4) 0%,
-        rgba(0, 217, 255, 0.4) 30%,
-        rgba(124, 58, 237, 0.25) 50%,
+        rgba(0, 114, 255, 0.4) 0%,
+        rgba(0, 198, 255, 0.4) 30%,
+        rgba(0, 12, 64, 0.25) 50%,
         transparent 70%
     );
     transform: translate(-50%, -50%) rotate(30deg);
@@ -315,8 +319,8 @@ img {
     width: 1000px;
     height: 400px;
     background: radial-gradient(ellipse at center,
-        rgba(30, 64, 175, 0.5) 0%,
-        rgba(0, 217, 255, 0.3) 40%,
+        rgba(0, 12, 64, 0.5) 0%,
+        rgba(0, 114, 255, 0.3) 40%,
         transparent 60%
     );
     transform: translate(-50%, -50%) rotate(90deg);
@@ -586,7 +590,9 @@ body.light-mode .moon-icon {
 }
 
 .btn-primary-glow,
-.btn-secondary-glow {
+.btn-secondary-glow,
+.btn-test-deep-ocean,
+.btn-test-electric-blue {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
@@ -609,6 +615,30 @@ body.light-mode .moon-icon {
 
 .btn-primary-glow:hover {
     box-shadow: var(--shadow-glow-hover);
+    transform: translateY(-2px);
+}
+
+.btn-test-deep-ocean {
+    background: var(--gradient-deep-ocean);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    box-shadow: 0 0 32px rgba(0, 114, 255, 0.3);
+}
+.btn-test-deep-ocean:hover {
+    box-shadow: 0 0 48px rgba(0, 114, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.btn-test-electric-blue {
+    background: var(--gradient-electric-blue);
+    background-origin: border-box;
+    background-repeat: no-repeat;
+    color: #ffffff;
+    box-shadow: 0 0 32px rgba(33, 82, 255, 0.3);
+}
+.btn-test-electric-blue:hover {
+    box-shadow: 0 0 48px rgba(33, 82, 255, 0.5);
     transform: translateY(-2px);
 }
 
@@ -949,7 +979,7 @@ body.light-mode .moon-icon {
     transform: translate(-50%, -50%);
     width: 400px;
     height: 400px;
-    background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 198, 255, 0.1) 0%, transparent 70%);
     border-radius: 50%;
     animation: pulse 3s ease-in-out infinite;
 }
@@ -978,8 +1008,8 @@ body.light-mode .moon-icon {
     height: 300px;
     border-radius: 50%; /* Circular */
     object-fit: cover;
-    border: 2px solid rgba(0, 217, 255, 0.5); /* Borda sutil na cor de destaque */
-    box-shadow: 0 0 40px rgba(0, 217, 255, 0.2); /* Glow externo */
+    border: 2px solid rgba(0, 198, 255, 0.5); /* Borda sutil na cor de destaque */
+    box-shadow: 0 0 40px rgba(0, 198, 255, 0.2); /* Glow externo */
     z-index: 2; /* Fica acima da animação de pulso */
     transition: all var(--transition-base);
     filter: grayscale(20%); /* Um pouco desaturado para combinar com o dark mode */
@@ -989,7 +1019,7 @@ body.light-mode .moon-icon {
     transform: scale(1.05);
     filter: grayscale(0%);
     border-color: var(--color-accent-primary);
-    box-shadow: 0 0 60px rgba(124, 58, 237, 0.4); /* Glow roxo no hover */
+    box-shadow: 0 0 60px rgba(0, 114, 255, 0.4); /* Glow roxo no hover */
 }
 
 /* Ajuste a animação existente para ficar atrás da foto */
@@ -1178,7 +1208,7 @@ body.light-mode .contact-profile-img {
 /* Light Mode Button Overrides */
 body.light-mode .btn-primary-glow {
     color: #FFFFFF;
-    box-shadow: 0 4px 14px rgba(0, 217, 255, 0.4);
+    box-shadow: 0 4px 14px rgba(255, 85, 0, 0.4);
 }
 
 body.light-mode .btn-secondary-glow {
@@ -1416,3 +1446,5 @@ body.light-mode .btn-secondary-glow:hover {
         display: none;
     }
 }
+
+
