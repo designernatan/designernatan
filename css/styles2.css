@@ -1463,4 +1463,80 @@ body.light-mode .btn-secondary-glow:hover {
     }
 }
 
+/* ========================================
+   CHRISTMAS MODE
+   ======================================== */
+
+body.christmas-mode {
+    /* Christmas Palette */
+    --color-accent-primary: #C41E3A; /* Christmas Red */
+    --color-accent-secondary: #0F8558; /* Christmas Green */
+    --color-accent-gold: #FFD700; /* Gold */
+    
+    /* Red/Green Gradient */
+    --gradient-accent: linear-gradient(270deg, #0F8558 0%, #C41E3A 100%);
+    
+    /* Gold Glow */
+    --shadow-glow: 0 0 32px rgba(255, 215, 0, 0.3);
+    --shadow-glow-hover: 0 0 48px rgba(255, 215, 0, 0.5);
+    
+    /* Special Cursor (Star) */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="%23FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>') 12 12, auto;
+}
+
+/* Golden Stars in Galaxy */
+body.christmas-mode .galaxy-spiral {
+    filter: sepia(100%) saturate(300%) hue-rotate(350deg); /* Gold/Reddish tint */
+}
+
+/* Blinking Lights Animation */
+body.christmas-mode .btn-primary-glow {
+    animation: christmas-blink 3s infinite alternate;
+}
+
+/* Ensure project cards keep their fade-in animation while blinking */
+body.christmas-mode .project-card.fade-in {
+    animation: fadeIn 0.25s ease forwards, christmas-blink 3s infinite alternate;
+}
+
+@keyframes christmas-blink {
+    0% { box-shadow: 0 0 15px #C41E3A; border-color: #C41E3A; }
+    50% { box-shadow: 0 0 25px #FFD700; border-color: #FFD700; }
+    100% { box-shadow: 0 0 15px #0F8558; border-color: #0F8558; }
+}
+
+/* Snow Effect */
+.snowflake {
+    position: fixed;
+    top: -10vh;
+    color: #FFF;
+    font-size: 1.5em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #000;
+    z-index: 9999;
+    user-select: none;
+    pointer-events: none;
+    animation-name: snowflakes-fall, snowflakes-shake;
+    animation-duration: 10s, 3s;
+    animation-timing-function: linear, ease-in-out;
+    animation-iteration-count: infinite, infinite;
+    opacity: 0.8;
+}
+
+@keyframes snowflakes-fall {
+    0% { top: -10vh; }
+    100% { top: 100vh; }
+}
+
+@keyframes snowflakes-shake {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(80px); }
+}
+
+/* Christmas Toggle Button */
+#christmas-toggle {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
 

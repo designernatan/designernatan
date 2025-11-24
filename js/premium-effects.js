@@ -397,6 +397,88 @@
     };
 
     // ========================================
+    // 15. CHRISTMAS MODE
+    // ========================================
+
+    const initChristmasMode = () => {
+        const toggle = document.getElementById('christmas-toggle');
+        if (!toggle) return;
+
+        // Snow generation
+        const createSnow = () => {
+            const snowContainer = document.createElement('div');
+            snowContainer.id = 'snow-container';
+            document.body.appendChild(snowContainer);
+
+            const snowflakes = ['❄', '❅', '❆'];
+            const numberOfSnowflakes = 50;
+
+            for (let i = 0; i < numberOfSnowflakes; i++) {
+                const snowflake = document.createElement('div');
+                snowflake.className = 'snowflake';
+                snowflake.innerHTML = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+                snowflake.style.left = Math.random() * 100 + 'vw';
+                snowflake.style.animationDuration = (Math.random() * 3 + 2) + 's, ' + (Math.random() * 5 + 3) + 's';
+                snowflake.style.animationDelay = (Math.random() * 5) + 's, ' + (Math.random() * 2) + 's';
+                snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+                snowContainer.appendChild(snowflake);
+            }
+        };
+
+        const removeSnow = () => {
+            const container = document.getElementById('snow-container');
+            if (container) container.remove();
+        };
+
+        const updateTextContent = (isChristmas) => {
+            const heroSubtitle = document.querySelector('.hero-subtitle');
+            const footerText = document.querySelector('.footer-bottom p');
+            
+            if (isChristmas) {
+                if(heroSubtitle && !heroSubtitle.dataset.original) heroSubtitle.dataset.original = heroSubtitle.innerText;
+                if(heroSubtitle) heroSubtitle.innerText = "Happy Holidays! " + heroSubtitle.dataset.original;
+                
+                if(footerText && !footerText.dataset.original) footerText.dataset.original = footerText.innerText;
+                if(footerText) footerText.innerText = "Season's Greetings! " + footerText.dataset.original;
+            } else {
+                if(heroSubtitle && heroSubtitle.dataset.original) heroSubtitle.innerText = heroSubtitle.dataset.original;
+                if(footerText && footerText.dataset.original) footerText.innerText = footerText.dataset.original;
+            }
+        };
+
+        const playJingle = () => {
+            // Play a jingle bell sound
+            // Using Google Actions Sound Library which is reliable and public
+            const audio = new Audio('https://actions.google.com/sounds/v1/cartoon/jingle_bells.ogg');
+            audio.volume = 0.5;
+            audio.play().catch(e => console.log('Audio play failed', e));
+        };
+
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('christmas-mode');
+            const isChristmas = document.body.classList.contains('christmas-mode');
+            
+            if (isChristmas) {
+                createSnow();
+                updateTextContent(true);
+                playJingle();
+            } else {
+                removeSnow();
+                updateTextContent(false);
+            }
+            
+            localStorage.setItem('christmas-mode', isChristmas);
+        });
+
+        // Check preference
+        if (localStorage.getItem('christmas-mode') === 'true') {
+            document.body.classList.add('christmas-mode');
+            createSnow();
+            updateTextContent(true);
+        }
+    };
+
+    // ========================================
     // 14. INITIALIZE ALL EFFECTS
     // ========================================
 
@@ -421,6 +503,7 @@
         initStatsCounter();
         initLazyLoad();
         initPerformanceOptimizations();
+        initChristmasMode(); // Initialize Christmas mode
 
         // Log initialization
         console.log('🎨 Premium effects initialized');
