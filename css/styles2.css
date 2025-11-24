@@ -587,6 +587,10 @@ body.light-mode .moon-icon {
     background-clip: text;
 }
 
+.hero-title-medium {
+    font-size: 2.5rem;
+}
+
 .hero-subtitle {
     font-size: var(--font-size-xl);
     color: var(--color-text-secondary);
@@ -1218,6 +1222,10 @@ body.light-mode .contact-profile-img {
     
     .section-title {
         font-size: var(--font-size-4xl);
+    }
+    
+    .hero-title-medium {
+        font-size: 2rem;
     }
 }
 
