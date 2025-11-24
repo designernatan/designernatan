@@ -411,6 +411,12 @@ img {
     border-bottom: 1px solid var(--color-border);
 }
 
+/* Light Mode Navbar Override */
+body.light-mode .premium-nav.scrolled {
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
 .nav-container {
     max-width: 1440px;
     margin: 0 auto;
@@ -480,7 +486,17 @@ img {
 
 .theme-toggle:hover {
     background: rgba(255, 255, 255, 0.1);
-    border-color: var(--color-border-hover);
+    border-color: var(--color-accent-primary);
+}
+
+body.light-mode .theme-toggle {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .theme-toggle:hover {
+    background: rgba(0, 0, 0, 0.1);
+    border-color: var(--color-accent-primary);
 }
 
 .theme-toggle svg {
