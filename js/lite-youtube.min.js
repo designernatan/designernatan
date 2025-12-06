@@ -31,10 +31,11 @@
             // Load iframe on click
             liteYoutube.addEventListener('click', function() {
                 const iframe = document.createElement('iframe');
-                iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
                 iframe.title = videoTitle;
-                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
                 iframe.allowFullscreen = true;
+                iframe.frameBorder = '0';
                 
                 // Replace lite element with iframe
                 this.innerHTML = '';
