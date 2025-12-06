@@ -306,12 +306,16 @@ small, .caption {
 }
 
 .hero-title {
-    font-size: clamp(48px, 8vw, var(--type-6xl));
+    font-size: clamp(64px, 12vw, 140px);
     font-weight: 800;
-    line-height: var(--leading-ultra-tight);
+    line-height: 0.85;
     margin-bottom: var(--grid-5);
     letter-spacing: var(--tracking-tighter);
     color: var(--swiss-black);
+}
+
+.hero-title .accent {
+    color: var(--accent-primary);
 }
 
 .hero-subtitle {
@@ -321,6 +325,37 @@ small, .caption {
     margin-bottom: var(--grid-6);
     max-width: 540px;
     font-weight: 400;
+}
+
+/* Hero Metrics Grid */
+.hero-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--grid-6);
+    margin-top: var(--grid-10);
+    padding-top: var(--grid-8);
+    border-top: 2px solid var(--swiss-black);
+}
+
+.metric-item {
+    text-align: left;
+}
+
+.metric-number {
+    font-size: var(--type-4xl);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: var(--tracking-tighter);
+    color: var(--swiss-black);
+    margin-bottom: var(--grid-1);
+}
+
+.metric-label {
+    font-size: var(--type-xs);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-wider);
+    font-weight: 700;
+    color: var(--accent-primary);
 }
 
 /* Hide scroll indicator */
@@ -461,6 +496,17 @@ small, .caption {
     margin-bottom: var(--grid-4);
     letter-spacing: var(--tracking-tighter);
     color: var(--swiss-black);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 8px;
+    background: var(--accent-primary);
+    margin-top: var(--grid-2);
 }
 
 .section-description {
