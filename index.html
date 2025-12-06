@@ -13,8 +13,17 @@
     <link rel="dns-prefetch" href="//www.youtube.com">
     <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="stylesheet" href="css/styles-swiss.min.css">
+    <link rel="stylesheet" href="css/christmas-mode.css">
 </head>
 <body>
+    
+    <!-- Christmas Lights Decoration -->
+    <div class="christmas-lights"></div>
+    
+    <!-- Christmas Mode Toggle Button -->
+    <button class="christmas-toggle" onclick="toggleChristmasMode()" title="Toggle Christmas Mode (Ctrl+Shift+C)">
+        🎄
+    </button>
     
     <!-- Premium Navigation -->
     <nav class="premium-nav" id="premium-nav">
@@ -277,5 +286,8 @@
             </div>
         </div>
     </footer>
+    
+    <!-- Christmas Mode Script -->
+    <script src="js/christmas-mode.js"></script>
 </body>
 </html>

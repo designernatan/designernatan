@@ -214,6 +214,7 @@ small, .caption {
     display: flex;
     gap: var(--grid-6);
     list-style: none;
+    align-items: center;
 }
 
 .nav-link {
