@@ -17,12 +17,12 @@
     /* Power Neutral - High Contrast Palette */
     --swiss-black: #000000;
     --swiss-white: #FFFFFF;
-    --swiss-red: #FF0000;
+    --swiss-red: #00a4ff;
     --swiss-gray-1: #FAFAFA;
     --swiss-gray-2: #F5F5F5;
     --swiss-gray-3: #A0A0A0;
     --swiss-gray-4: #1A1A1A;
-    --accent-primary: #FF0000;
+    --accent-primary: #00a4ff;
     --accent-secondary: #000000;
     
     /* Mathematical Grid System - 8pt Base */
