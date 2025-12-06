@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
     images.forEach((img, index) => {
         img.parentElement.addEventListener("click", function (event) {
             event.preventDefault();
+            event.stopPropagation();
             currentIndex = index;
             const originalSrc = img.src;
             const bigSrc = originalSrc.replace('.jpg', '-big.jpg');
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
             testImage(bigSrc, function(exists) {
                 openLightbox(exists ? bigSrc : originalSrc);
             });
+            return false;
         });
     });
 
